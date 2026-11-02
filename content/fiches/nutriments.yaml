@@ -1,0 +1,170 @@
+# Cartes d'information (type 2) — vitamines et minéraux.
+# Références adultes d'après ANSES 2021 (avis NUT2018SA0238) sauf mention contraire.
+# ⚠ Valeurs à revérifier dans les tableaux de l'avis avant publication.
+
+categories:
+  - { id: vitamine, label: Vitamines }
+  - { id: mineral, label: Minéraux }
+
+vigilances:
+  - { id: grossesse, label: Grossesse }
+  - { id: enfant, label: Enfants & ados }
+  - { id: senior, label: Seniors }
+  - { id: vegan, label: Végétarien·ne / végan·e }
+
+fiches:
+  - id: vitamine-d
+    categorie: vitamine
+    titre: Vitamine D
+    theme: dairy
+    etiquette: Vitamine
+    chiffre: 15 µg/jour
+    chiffre_note: adulte · apport satisfaisant
+    resume: Fixe le calcium sur les os, soutient muscles et immunité.
+    sources_alimentaires: [Soleil, Poissons gras, Œufs]
+    vigilance: [senior, enfant, grossesse, vegan]
+    source: ANSES-2021
+
+  - id: vitamine-b12
+    categorie: vitamine
+    titre: Vitamine B12
+    theme: prot
+    etiquette: Vitamine
+    chiffre: 4 µg/jour
+    chiffre_note: adulte · apport satisfaisant
+    resume: Indispensable aux globules rouges et au système nerveux. Uniquement d'origine animale.
+    sources_alimentaires: [Viande, Poisson, Œufs, Laitiers]
+    vigilance: [vegan, senior]
+    source: ANSES-2021
+
+  - id: vitamine-b9
+    categorie: vitamine
+    titre: Vitamine B9 (folates)
+    theme: veg
+    etiquette: Vitamine
+    chiffre: 330 µg/jour
+    chiffre_note: adulte · 600 µg pendant la grossesse
+    resume: Essentielle au développement du bébé. Supplément de 400 µg conseillé dès le projet de grossesse.
+    sources_alimentaires: [Légumes verts, Légumineuses]
+    vigilance: [grossesse]
+    source: ANSES-2021
+
+  - id: vitamine-c
+    categorie: vitamine
+    titre: Vitamine C
+    theme: fat
+    etiquette: Vitamine
+    chiffre: 110 mg/jour
+    chiffre_note: adulte
+    resume: Immunité et meilleure absorption du fer végétal.
+    sources_alimentaires: [Poivron, Kiwi, Agrumes, Choux]
+    vigilance: [vegan]
+    source: ANSES-2021
+
+  - id: vitamine-a
+    categorie: vitamine
+    titre: Vitamine A
+    theme: fat
+    etiquette: Vitamine
+    chiffre: 650–750 µg/jour
+    chiffre_note: femme – homme
+    resume: Vision, peau, immunité. Éviter le foie pendant la grossesse (excès).
+    sources_alimentaires: [Carotte, Patate douce, Beurre]
+    vigilance: [grossesse]
+    source: ANSES-2021
+
+  - id: vitamine-k
+    categorie: vitamine
+    titre: Vitamine K
+    theme: veg
+    etiquette: Vitamine
+    chiffre: 79 µg/jour
+    chiffre_note: adulte · apport satisfaisant
+    resume: Coagulation du sang et santé des os.
+    sources_alimentaires: [Épinards, Choux, Salade]
+    vigilance: []
+    source: ANSES-2021
+
+  - id: calcium
+    categorie: mineral
+    titre: Calcium
+    theme: dairy
+    etiquette: Minéral
+    chiffre: 950 mg/jour
+    chiffre_note: adulte ≥ 25 ans · 1000 mg de 18 à 24 ans
+    resume: Construit et entretient les os et les dents.
+    sources_alimentaires: [Laitiers, Eaux calciques, Amandes, Tofu]
+    vigilance: [enfant, senior, vegan]
+    source: ANSES-2021
+
+  - id: fer
+    categorie: mineral
+    titre: Fer
+    theme: prot
+    etiquette: Minéral
+    chiffre: 11–16 mg/jour
+    chiffre_note: selon le sexe et les pertes menstruelles
+    resume: Transporte l'oxygène dans le sang. Fer animal mieux absorbé que le fer végétal.
+    sources_alimentaires: [Viande rouge, Boudin, Lentilles]
+    vigilance: [grossesse, enfant, vegan]
+    source: ANSES-2021
+
+  - id: iode
+    categorie: mineral
+    titre: Iode
+    theme: water
+    etiquette: Oligo-élément
+    chiffre: 150 µg/jour
+    chiffre_note: adulte · 200 µg grossesse et allaitement
+    resume: Hormones thyroïdiennes et développement du cerveau du bébé.
+    sources_alimentaires: [Poisson, Sel iodé, Laitiers]
+    vigilance: [grossesse, senior, vegan]
+    source: ANSES-2021
+
+  - id: magnesium
+    categorie: mineral
+    titre: Magnésium
+    theme: carb
+    etiquette: Minéral
+    chiffre: 300–380 mg/jour
+    chiffre_note: femme – homme · apport satisfaisant
+    resume: Fonctionnement des nerfs et des muscles, production d'énergie.
+    sources_alimentaires: [Céréales complètes, Légumineuses, Fruits à coque]
+    vigilance: []
+    source: ANSES-2016
+
+  - id: zinc
+    categorie: mineral
+    titre: Zinc
+    theme: prot
+    etiquette: Oligo-élément
+    chiffre: 7,5–14 mg/jour
+    chiffre_note: selon le sexe et l'apport en phytates
+    resume: Immunité, cicatrisation et croissance.
+    sources_alimentaires: [Viande, Fruits de mer, Céréales complètes]
+    vigilance: [vegan, senior]
+    source: ANSES-2021
+
+  - id: sel
+    categorie: mineral
+    titre: Sel (sodium)
+    theme: water
+    etiquette: À limiter
+    chiffre: "< 5 g/jour"
+    chiffre_note: objectif OMS · Français ≈ 8 g
+    resume: Les trois quarts du sel consommé sont cachés dans les produits transformés.
+    sources_alimentaires: [Pain, Charcuterie, Fromages, Plats préparés]
+    vigilance: []
+    source: OMS-sel
+
+  - id: potassium
+    categorie: mineral
+    titre: Potassium
+    theme: veg
+    etiquette: Minéral
+    chiffre: 3500 mg/jour
+    chiffre_note: adulte · apport satisfaisant
+    resume: Aide à réguler la pression artérielle et le fonctionnement des muscles.
+    sources_alimentaires: [Fruits, Légumes, Légumineuses]
+    vigilance: []
+    source: ANSES-2016

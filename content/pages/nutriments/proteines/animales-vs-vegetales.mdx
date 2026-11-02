@@ -1,0 +1,84 @@
+---
+type: page
+titre: Protéines animales ou végétales ?
+chapeau: Les deux apportent des protéines de qualité, mais pas les mêmes nutriments autour. Bonne nouvelle, il n'y a pas à choisir.
+theme: prot
+rubrique: nutriments
+fil:
+  - { label: Accueil, href: / }
+  - { label: Nutriments }
+  - { label: Protéines }
+  - { label: Animales ou végétales }
+ages: [Adultes, Seniors]
+duree: 6
+a_retenir:
+  - "Un adulte a besoin d'environ 0,83 g de protéines par kg et par jour, soit environ 58 g pour 70 kg."
+  - "Céréales et légumineuses mangées dans la même journée apportent un profil complet."
+  - "Viande hors volaille : 500 g par semaine au maximum. Légumineuses : au moins 2 fois par semaine."
+sources: [AFSSA-2007, EFSA-DRV, ANSES-2016, ANSES-2019, PNNS4, CIRC-2015, CIQUAL, AGRIBALYSE]
+maj: 2026-11-01
+relecture: non-relu
+---
+
+import { BalanceIllustration } from "~/illustrations/balance";
+import { CompareProteins } from "~/components/compare-proteins";
+import { AminoComplement } from "~/components/amino-complement";
+import { ProteinDay } from "~/components/protein-day";
+import { PourAllerPlusLoin } from "~/components/ui";
+
+<BalanceIllustration className="mx-auto my-12 w-full max-w-md" />
+
+## À quoi servent les protéines ?
+
+Les protéines construisent et réparent le corps : **muscles, peau, os, cheveux**. Elles fabriquent aussi les enzymes, certaines hormones et les anticorps.
+
+Elles sont formées de petites briques, les **acides aminés**. Il en existe 20, dont **9 indispensables** : le corps ne sait pas les fabriquer, l'alimentation doit les apporter.
+
+## De combien en ai-je besoin ?
+
+Pour un adulte en bonne santé, la référence est de **0,83 g par kg de poids corporel et par jour**. Après 70 ans, on recommande **au moins 1 g par kg** pour préserver les muscles.
+
+<ProteinDay />
+
+En France, la plupart des adultes mangent **plus de protéines que nécessaire**. L'enjeu n'est donc pas la quantité, mais **l'équilibre entre les sources**.
+
+## Animal ou végétal : ce qui change
+
+Au-delà des protéines, chaque aliment apporte d'autres nutriments. Choisissez un critère pour comparer.
+
+<CompareProteins />
+
+- **Les protéines animales** (viande, poisson, œufs, produits laitiers) contiennent les 9 acides aminés indispensables. Elles apportent aussi du fer bien absorbé, de la vitamine B12, du zinc et du calcium (produits laitiers).
+- **Les protéines végétales** (légumineuses, céréales, soja, fruits à coque) apportent en plus des **fibres**, du magnésium et du potassium, avec peu de graisses saturées et un faible impact sur le climat.
+
+## Céréales + légumineuses : le bon duo
+
+Les céréales manquent un peu de **lysine**, les légumineuses de **méthionine**. Ensemble, elles se complètent. Inutile de les réunir dans la même assiette : **sur la journée**, cela suffit.
+
+<AminoComplement />
+
+Quelques duos qui existent depuis longtemps dans les cuisines du monde : riz et lentilles (dal), semoule et pois chiches (couscous), maïs et haricots rouges, pain et houmous.
+
+## Ce que recommandent les repères officiels
+
+- **Légumineuses** : au moins **2 fois par semaine**.
+- **Viande hors volaille** : **500 g par semaine** au maximum. Privilégier la volaille.
+- **Charcuterie** : **150 g par semaine** au maximum.
+- **Poisson** : **2 fois par semaine**, dont un poisson gras.
+- **Fruits à coque** non salés : une petite poignée par jour.
+
+Le Centre international de recherche sur le cancer classe la **charcuterie** comme « cancérogène » et la **viande rouge** comme « probablement cancérogène » pour le cancer colorectal. C'est la raison de ces limites.
+
+<PourAllerPlusLoin titre="Besoins en protéines selon la situation">
+
+| Situation | Besoin indicatif | Source |
+|---|---|---|
+| Adulte | 0,83 g/kg/jour (besoin moyen : 0,66) | AFSSA 2007, EFSA 2012 |
+| Enfants et adolescents | 0,83 à 1,31 g/kg/jour selon l'âge | EFSA 2012 |
+| 70 ans et plus | ≥ 1 g/kg/jour ; 1,2 à 1,5 en cas de dénutrition | ANSES 2019, HAS 2021 |
+| Grossesse | +1 g, +9 g puis +28 g/jour selon le trimestre | EFSA 2012 |
+| Allaitement | environ +19 g/jour (0 à 6 mois) | EFSA 2012 |
+
+Les protéines végétales sont un peu moins digestibles que les protéines animales (fibres, facteurs antinutritionnels). Le trempage et la cuisson améliorent leur digestibilité.
+
+</PourAllerPlusLoin>

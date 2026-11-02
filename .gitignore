@@ -1,0 +1,12 @@
+.DS_Store
+.env
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+
+# Assistant (Cloudflare Worker)
+/worker/corpus.generated.ts
+/.wrangler/
+.dev.vars

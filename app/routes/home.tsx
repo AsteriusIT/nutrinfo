@@ -1,0 +1,232 @@
+import { useState } from "react";
+import { Link } from "react-router";
+import { PixelBand } from "~/components/pixel-band";
+import { ButtonLink } from "~/components/ui";
+import { PlateExplorer } from "~/illustrations/plate";
+import { PROFILS } from "~/data/profils";
+import { themes, type ThemeKey } from "~/lib/theme";
+
+export const meta = () => [
+  { title: "Asterius Nutrition : bien manger à chaque âge de la vie" },
+  {
+    name: "description",
+    content:
+      "Des repères simples et sourcés pour bien manger selon son âge : assiette équilibrée, protéines, vitamines, grossesse, seniors.",
+  },
+];
+
+// Repères PNNS 4, repris par le PNNS 5 (adultes)
+const REPERES: { titre: string; sens: string; theme: ThemeKey; items: [string, string][] }[] = [
+  {
+    titre: "Augmenter",
+    sens: "À manger plus souvent",
+    theme: "veg",
+    items: [
+      ["Fruits et légumes", "5 par jour"],
+      ["Légumes secs", "2 fois par semaine"],
+      ["Fruits à coque", "1 poignée par jour"],
+      ["Activité physique", "30 min par jour"],
+    ],
+  },
+  {
+    titre: "Aller vers",
+    sens: "À choisir de préférence",
+    theme: "carb",
+    items: [
+      ["Féculents complets", "1 par jour au moins"],
+      ["Poisson", "2 fois par semaine"],
+      ["Huiles colza, noix, olive", "chaque jour"],
+      ["Produits laitiers", "2 par jour"],
+    ],
+  },
+  {
+    titre: "Réduire",
+    sens: "À limiter",
+    theme: "prot",
+    items: [
+      ["Viande hors volaille", "500 g par semaine"],
+      ["Charcuterie", "150 g par semaine"],
+      ["Sel", "moins de 5 g par jour"],
+      ["Alcool", "10 verres par semaine"],
+    ],
+  },
+];
+
+const DISPONIBLE: { titre: string; texte: string; href: string; theme: ThemeKey }[] = [
+  { titre: "Composer son assiette", texte: "Remplissez une assiette et voyez si elle est équilibrée.", href: "/bases/assiette", theme: "veg" },
+  { titre: "Protéines animales ou végétales ?", texte: "Comparez, calculez votre besoin, associez céréales et légumineuses.", href: "/nutriments/proteines/animales-vs-vegetales", theme: "prot" },
+  { titre: "Glucides, sucres et fibres", texte: "Voyez où se cache le sucre et composez une journée riche en fibres.", href: "/nutriments/glucides", theme: "carb" },
+  { titre: "Bien s'hydrater", texte: "Combien boire, quoi boire, et le sucre des boissons en morceaux.", href: "/nutriments/eau", theme: "water" },
+  { titre: "Vitamines et minéraux", texte: "Rôle, besoin et sources de chacun, sur une fiche.", href: "/nutriments/vitamines-et-mineraux", theme: "dairy" },
+  { titre: "Selon mon âge", texte: "Ce qui change pour les enfants, pendant la grossesse et après 65 ans.", href: "/ages", theme: "age" },
+];
+
+const A_VENIR = ["Bonnes graisses", "Lire une étiquette", "Bébés de 0 à 3 ans"];
+
+export default function Home() {
+  return (
+    <>
+      <PixelBand />
+      <Hero />
+      <Reperes />
+      <ProfilSelector />
+      <Explorer />
+    </>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="border-b-2 border-ink">
+      <div className="mx-auto grid max-w-[1240px] items-center gap-10 px-4 py-12 md:px-6 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:py-20">
+        <div>
+          <h1 className="display text-[2.75rem] sm:text-6xl xl:text-[5.5rem]">Bien manger, à chaque âge de la vie</h1>
+          <p className="mt-7 max-w-[46ch] text-lg md:text-xl">
+            Des repères clairs, tirés des recommandations des autorités de santé françaises et
+            européennes. Commencez par l'assiette : touchez une case pour lire son repère.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <ButtonLink to="/bases/assiette">Composer mon assiette</ButtonLink>
+            <ButtonLink to="/ages" variant="secondary">
+              Voir les repères selon mon âge
+            </ButtonLink>
+          </div>
+        </div>
+        <PlateExplorer />
+      </div>
+    </section>
+  );
+}
+
+function Reperes() {
+  return (
+    <section className="mx-auto max-w-[1240px] px-4 py-20 md:px-6" aria-labelledby="reperes-titre">
+      <h2 id="reperes-titre" className="heading max-w-[24ch] text-3xl md:text-5xl">
+        Les repères officiels en trois mots
+      </h2>
+      <p className="mt-4 max-w-[60ch] text-muted">
+        Le Programme national nutrition santé résume l'essentiel pour les adultes. Le PNNS 5, publié
+        en avril 2026, garde ces repères.
+      </p>
+      <div className="mt-10 grid gap-0 border-2 border-ink md:grid-cols-3">
+        {REPERES.map((r) => {
+          const t = themes[r.theme];
+          return (
+            <div key={r.titre} className="border-b-2 border-ink last:border-b-0 md:border-b-0 md:border-r-2 md:last:border-r-0">
+              <div className={`${t.bg500} ${t.on500} px-5 py-5`}>
+                <h3 className="display text-3xl">{r.titre}</h3>
+                <p className="mt-1 font-semibold opacity-90">{r.sens}</p>
+              </div>
+              <dl>
+                {r.items.map(([nom, freq]) => (
+                  <div key={nom} className="flex items-baseline justify-between gap-4 border-t border-line px-5 py-3 first:border-t-0">
+                    <dt>{nom}</dt>
+                    <dd className={`text-right font-bold ${t.text800}`}>{freq}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          );
+        })}
+      </div>
+      <p className="mt-3 text-sm text-muted">
+        Source :{" "}
+        <Link to="/sources#PNNS4" className="link">
+          PNNS 4 (2019)
+        </Link>
+        , repris par le{" "}
+        <Link to="/sources#PNNS5" className="link">
+          PNNS 5 (2026)
+        </Link>
+        .
+      </p>
+    </section>
+  );
+}
+
+function ProfilSelector() {
+  const [actif, setActif] = useState("adulte");
+  const p = PROFILS.find((x) => x.id === actif)!;
+
+  return (
+    <section className="border-y-2 border-ink bg-age-100" aria-labelledby="profil-titre">
+      <div className="mx-auto max-w-[1240px] px-4 py-20 md:px-6">
+        <h2 id="profil-titre" className="heading text-3xl md:text-5xl">
+          Vos besoins changent avec l'âge
+        </h2>
+        <p className="mt-4 text-muted">Choisissez une période de la vie.</p>
+
+        <div role="tablist" aria-label="Période de la vie" className="mt-8 grid grid-cols-2 gap-px border-2 border-ink bg-ink sm:grid-cols-5">
+          {PROFILS.map((x) => (
+            <button
+              key={x.id}
+              role="tab"
+              id={`tab-${x.id}`}
+              aria-selected={actif === x.id}
+              aria-controls="profil-panel"
+              type="button"
+              onClick={() => setActif(x.id)}
+              className={`px-4 py-3 text-left transition-colors duration-150 ${
+                actif === x.id ? "bg-age-500 text-light" : "bg-plate hover:bg-age-100"
+              }`}
+            >
+              <span className="block font-bold">{x.label}</span>
+              <span className="text-sm opacity-80">{x.age}</span>
+            </button>
+          ))}
+        </div>
+
+        <div id="profil-panel" role="tabpanel" aria-labelledby={`tab-${p.id}`} className="border-x-2 border-b-2 border-ink bg-plate p-6 md:p-8">
+          <ul className="grid gap-5 md:grid-cols-3" key={p.id}>
+            {p.points.map((pt) => (
+              <li key={pt} className="flex animate-fade gap-3 text-lg font-semibold leading-snug">
+                <span className="mt-[0.45em] h-2.5 w-2.5 shrink-0 bg-age-500" aria-hidden="true" />
+                {pt}
+              </li>
+            ))}
+          </ul>
+          {p.href && p.cta ? (
+            <div className="mt-8">
+              <ButtonLink to={p.href}>{p.cta}</ButtonLink>
+            </div>
+          ) : (
+            <p className="mt-8 text-sm text-muted">La page détaillée pour cette période est en préparation.</p>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Explorer() {
+  return (
+    <section className="mx-auto max-w-[1240px] px-4 py-20 md:px-6" aria-labelledby="explorer-titre">
+      <h2 id="explorer-titre" className="heading text-3xl md:text-5xl">
+        Déjà disponible
+      </h2>
+      <ul className="mt-10 grid gap-4 sm:grid-cols-2">
+        {DISPONIBLE.map((r) => {
+          const t = themes[r.theme];
+          return (
+            <li key={r.href}>
+              <Link
+                to={r.href}
+                className="group flex h-full border-2 border-ink transition-[box-shadow,transform] duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--color-ink)]"
+              >
+                <span className={`w-5 shrink-0 ${t.bg500} transition-[width] duration-200 group-hover:w-8`} aria-hidden="true" />
+                <span className="p-5">
+                  <span className="heading block text-xl">{r.titre}</span>
+                  <span className="mt-2 block text-muted">{r.texte}</span>
+                </span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="mt-8 text-muted">
+        <span className="font-bold text-ink">En préparation : </span>
+        {A_VENIR.join(", ")}.
+      </p>
+    </section>
+  );
+}

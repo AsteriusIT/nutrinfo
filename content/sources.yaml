@@ -1,0 +1,111 @@
+# Bibliographie — le code sert d'ancre (/sources#CODE) et de badge.
+- code: PNNS5
+  titre: Programme national nutrition santé 2026-2030
+  organisme: Ministère chargé de la Santé
+  annee: "2026"
+  url: https://sante.gouv.fr/IMG/pdf/pnns_5_2026-2030.pdf
+- code: PNNS4
+  titre: Recommandations « Augmenter, aller vers, réduire »
+  organisme: Santé publique France — Manger Bouger
+  annee: "2019"
+  url: https://www.mangerbouger.fr
+- code: ANSES-2016
+  titre: Actualisation des repères du PNNS — références nutritionnelles et repères de consommation
+  organisme: ANSES
+  annee: "2016"
+  url: https://www.anses.fr/fr/content/lanses-actualise-les-reperes-de-consommations-alimentaires-pour-la-population-francaise
+- code: ANSES-2019
+  titre: Repères alimentaires des populations spécifiques (0-3 ans, 4-17 ans, grossesse et allaitement, personnes âgées)
+  organisme: ANSES
+  annee: "2019"
+  url: https://www.anses.fr/fr/content/nutrition-des-enfants-des-personnes-agees-et-des-femmes-enceintes-ou-allaitantes-lanses
+- code: ANSES-2021
+  titre: Références nutritionnelles en vitamines et minéraux (avis NUT2018SA0238)
+  organisme: ANSES
+  annee: "2021"
+  url: https://www.anses.fr/fr/article/references-nutritionnelles-vitamines-mineraux
+- code: AFSSA-2007
+  titre: Apport en protéines — consommation, qualité, besoins et recommandations
+  organisme: AFSSA (aujourd'hui ANSES)
+  annee: "2007"
+  url: https://www.anses.fr
+- code: EFSA-DRV
+  titre: Scientific Opinion on Dietary Reference Values for protein
+  organisme: EFSA
+  annee: "2012"
+  url: https://www.efsa.europa.eu/en/press/news/120209
+- code: HAS-2021
+  titre: Diagnostic de la dénutrition chez la personne de 70 ans et plus
+  organisme: Haute Autorité de santé
+  annee: "2021"
+  url: https://www.has-sante.fr
+- code: CIQUAL
+  titre: Table de composition nutritionnelle des aliments Ciqual, version 2020 (Licence Ouverte Etalab 2.0)
+  organisme: ANSES
+  annee: "2020"
+  url: https://ciqual.anses.fr
+- code: AGRIBALYSE
+  titre: Base de données environnementale des aliments, version 3.1 (indicateur « Changement climatique »)
+  organisme: ADEME
+  annee: "2023"
+  url: https://agribalyse.ademe.fr
+- code: CIRC-2015
+  titre: Monographie 114 — Consommation de viande rouge et de viande transformée
+  organisme: Centre international de recherche sur le cancer (OMS)
+  annee: "2015"
+  url: https://www.iarc.who.int
+- code: OMS-sel
+  titre: Guideline — Sodium intake for adults and children
+  organisme: Organisation mondiale de la santé
+  annee: "2012"
+  url: https://www.who.int
+- code: HCSP-2017
+  titre: Avis relatif à la révision des repères alimentaires pour les adultes du futur PNNS 2017-2021
+  organisme: Haut Conseil de la santé publique
+  annee: "2017"
+  url: https://www.hcsp.fr
+- code: SPF-1000J
+  titre: Les 1000 premiers jours — alimentation pendant la grossesse
+  organisme: Santé publique France
+  annee: "2023"
+  url: https://www.1000-premiers-jours.fr
+- code: ANSES-poissons
+  titre: Consommation de poissons et exposition au méthylmercure — recommandations pour les femmes enceintes et les jeunes enfants
+  organisme: ANSES
+  annee: "2016"
+  url: https://www.anses.fr
+- code: EFSA-cafeine
+  titre: Scientific Opinion on the safety of caffeine
+  organisme: EFSA
+  annee: "2015"
+  url: https://www.efsa.europa.eu
+- code: EFSA-eau
+  titre: Scientific Opinion on Dietary Reference Values for water
+  organisme: EFSA
+  annee: "2010"
+  url: https://www.efsa.europa.eu
+- code: OMS-AP-2020
+  titre: Lignes directrices sur l'activité physique et la sédentarité
+  organisme: Organisation mondiale de la santé
+  annee: "2020"
+  url: https://www.who.int
+- code: OMS-sucres
+  titre: Guideline — Sugars intake for adults and children
+  organisme: Organisation mondiale de la santé
+  annee: "2015"
+  url: https://www.who.int/publications/i/item/9789241549028
+- code: SPF-alcool
+  titre: Avis d'experts relatif à l'évolution du discours public en matière de consommation d'alcool en France
+  organisme: Santé publique France et Institut national du cancer
+  annee: "2017"
+  url: https://www.santepubliquefrance.fr
+- code: ANSES-energisantes
+  titre: Avis relatif à l'évaluation des risques liés à la consommation de boissons dites « énergisantes »
+  organisme: ANSES
+  annee: "2013"
+  url: https://www.anses.fr
+- code: SFP-vitD
+  titre: Supplémentation en vitamine D de l'enfant et de l'adolescent — recommandations françaises
+  organisme: Société française de pédiatrie (Archives de pédiatrie)
+  annee: "2022"
+  url: https://www.sfpediatrie.com

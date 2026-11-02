@@ -1,0 +1,248 @@
+@import "tailwindcss";
+@import "@fontsource-variable/atkinson-hyperlegible-next/wght.css";
+/* Polices servies par le site lui-même : aucune requête vers Google Fonts (RGPD) */
+@import "@fontsource-variable/fraunces/opsz.css";
+
+/* Design system « Carré » v2 — voir docs/design-system.md et docs/revue-ux.md */
+@theme {
+  /* Zéro arrondi (exigence du brief) */
+  --radius-*: initial;
+
+  --font-sans: "Atkinson Hyperlegible Next Variable", system-ui, sans-serif;
+  --font-display: "Fraunces Variable", Georgia, serif;
+
+  /* Base. light-dark(clair, sombre) : le thème suit `color-scheme` (voir html plus bas).
+     Contrastes du thème sombre vérifiés (AA) comme ceux du thème clair. */
+  --color-plate: light-dark(#ffffff, #10131c);
+  --color-faience: light-dark(#f1f3f6, #1a1e2b);
+  --color-line: light-dark(#d9dde5, #343b52);
+  --color-muted: light-dark(#545a73, #a9afc6);
+  --color-ink: light-dark(#1a1f36, #eceef5);
+
+  /* `white` suit le thème : c'est la couleur du texte posé sur `ink` (sombre en mode sombre) */
+  --color-white: light-dark(#ffffff, #10131c);
+  /* Couleurs fixes, identiques dans les deux thèmes : texte sur les aplats 500, bocal à sucre */
+  --color-dark: #1a1f36;
+  --color-light: #ffffff;
+
+  /* Familles d'aliments : 100 = fond, 500 = aplat (identique dans les deux thèmes), 800 = texte (AA sur blanc et sur 100) */
+  --color-veg-100: light-dark(#e3f4e8, #13291b);
+  --color-veg-500: #2e9e5b;
+  --color-veg-800: light-dark(#1b5e35, #8fdcaa);
+  --color-carb-100: light-dark(#fcf1cf, #2c2410);
+  --color-carb-500: #e9b10f;
+  --color-carb-800: light-dark(#6b4e00, #f2d27a);
+  --color-prot-100: light-dark(#f7e3ed, #2e1723);
+  --color-prot-500: #b4467a;
+  --color-prot-800: light-dark(#7e2350, #f2aacb);
+  --color-dairy-100: light-dark(#e2eef9, #13243a);
+  --color-dairy-500: #2f74b5;
+  --color-dairy-800: light-dark(#1b4f78, #a2cbf0);
+  --color-fat-100: light-dark(#fdebd4, #32210e);
+  --color-fat-500: #f08a1c;
+  --color-fat-800: light-dark(#7a3f00, #f7c088);
+  --color-water-100: light-dark(#ddf2fb, #0e2934);
+  --color-water-500: #38b2e3;
+  --color-water-800: light-dark(#0e4f6b, #92d8f2);
+  --color-age-100: light-dark(#ede5fb, #221a3b);
+  --color-age-500: #7c3aed;
+  --color-age-800: light-dark(#4c1d95, #cbb6fb);
+  --color-tool-100: light-dark(#ddf3f3, #0e2a2a);
+  --color-tool-500: #14a3a3;
+  --color-tool-800: light-dark(#0a5555, #8adcdc);
+
+  /* Séries de graphiques validées (dataviz/validate_palette.js, mode clair) */
+  --color-animal: #b4467a;
+  --color-vegetal: #2e9e5b;
+
+  --ease-carre: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --animate-tile: tile 420ms var(--ease-carre) both;
+  --animate-fade: fade 240ms ease-out both;
+  --animate-drop: drop 520ms cubic-bezier(0.3, 0.7, 0.35, 1.2) both;
+
+  @keyframes tile {
+    from {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  /* Morceau de sucre qui tombe dans le bocal */
+  @keyframes drop {
+    from {
+      opacity: 0;
+      transform: translateY(-140px) rotate(-14deg);
+    }
+    40% {
+      opacity: 1;
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light dark;
+    background: var(--color-plate);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+  /* Choix explicite (bouton de l'en-tête), sinon le réglage du système */
+  html[data-theme="light"] {
+    color-scheme: light;
+  }
+  html[data-theme="dark"] {
+    color-scheme: dark;
+  }
+  ::selection {
+    background: var(--color-carb-500);
+    color: var(--color-dark);
+  }
+}
+
+@layer components {
+  /* Titres « étiquette de marché » : Fraunces très gras */
+  .display {
+    font-family: var(--font-display);
+    font-stretch: 118%;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+  }
+  .heading {
+    font-family: var(--font-display);
+    font-stretch: 110%;
+    font-weight: 750;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+  .figure {
+    font-family: var(--font-display);
+    font-stretch: 100%;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  /* Petite étiquette : casse normale, demi-gras */
+  .tag {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .link:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* Contenu MDX (type « page ») : seulement les enfants directs */
+  .prose-carre {
+    max-width: 68ch;
+  }
+  .prose-carre > * + * {
+    margin-top: 1.25rem;
+  }
+  .prose-carre > h2 {
+    margin-top: 4rem;
+    font-size: clamp(1.625rem, 1.2rem + 1.4vw, 2.25rem);
+    font-stretch: 112%;
+    font-weight: 750;
+    line-height: 1.1;
+  }
+  .prose-carre > h3 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .prose-carre > :is(p, ul, ol) a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .prose-carre > ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .prose-carre > ul > li {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .prose-carre > ul > li + li {
+    margin-top: 0.5rem;
+  }
+  .prose-carre > ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.55rem;
+    height: 0.55rem;
+    background: var(--theme-500, var(--color-ink));
+  }
+  .prose-carre > :is(p, ul, ol) strong {
+    font-weight: 700;
+  }
+  .prose-carre > table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .prose-carre > table :is(th, td) {
+    border-bottom: 1px solid var(--color-line);
+    padding: 0.625rem 0.75rem 0.625rem 0;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose-carre > table th {
+    border-bottom: 2px solid var(--color-ink);
+    font-weight: 700;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+}

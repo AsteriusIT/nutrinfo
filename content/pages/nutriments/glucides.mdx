@@ -1,0 +1,73 @@
+---
+type: page
+titre: Glucides, sucres et fibres
+chapeau: Les glucides sont le premier carburant du corps. L'enjeu n'est pas d'en manger moins, mais de choisir les bons, de repérer le sucre caché et de manger plus de fibres.
+theme: carb
+rubrique: nutriments
+fil:
+  - { label: Accueil, href: / }
+  - { label: Nutriments }
+  - { label: Glucides }
+ages: [Adultes, Enfants]
+duree: 6
+a_retenir:
+  - "Féculents complets (pain complet, pâtes complètes, riz brun) : au moins une fois par jour."
+  - "Sucres ajoutés et jus de fruits : idéalement moins de 25 g par jour pour un adulte, soit 5 morceaux de sucre."
+  - "Fibres : 30 g par jour, grâce aux légumes, fruits, légumes secs et céréales complètes."
+sources: [ANSES-2016, OMS-sucres, PNNS4, CIQUAL]
+maj: 2026-11-02
+relecture: non-relu
+---
+
+import { SugarHunt } from "~/components/sugar";
+import { FibreDay } from "~/components/fibre-day";
+import { PourAllerPlusLoin } from "~/components/ui";
+
+## À quoi servent les glucides ?
+
+Les glucides apportent l'énergie dont les **muscles** et surtout le **cerveau** ont besoin. Ils fournissent 4 kcal par gramme et devraient représenter **40 à 55 % de l'énergie** de la journée.
+
+Il en existe deux grandes familles :
+
+- **les glucides complexes**, ou amidon : pain, pâtes, riz, pommes de terre, semoule, légumes secs. Ils sont digérés lentement, surtout dans leur version complète ;
+- **les sucres** : celui des fruits et du lait, et celui qu'on ajoute (sucre de table, miel, sirops).
+
+## Où se cache le sucre ?
+
+Le sucre du fruit entier et du lait n'est pas en cause. Ce sont les **sucres libres** qu'il faut limiter : le sucre ajouté par l'industrie ou à la maison, le miel, les sirops, et le sucre des jus de fruits. Une bonne partie se trouve là où on ne l'attend pas.
+
+<SugarHunt ids={["cola", "jusOrange", "yaourtFruits", "yaourtNature", "cereales", "painDeMie", "ketchup", "barre", "pomme"]} />
+
+L'Organisation mondiale de la santé recommande de limiter les sucres libres à **moins de 10 % de l'énergie**, et idéalement **moins de 5 %**, soit environ **25 g par jour** pour un adulte.
+
+Pour repérer le sucre ajouté sur une étiquette, regardez la ligne « **dont sucres** » du tableau nutritionnel, et la liste des ingrédients : sucre, sirop de glucose, sirop de glucose-fructose, dextrose, saccharose, miel, jus de fruit concentré. Plus un ingrédient est cité tôt, plus il y en a.
+
+## Les fibres, le nutriment oublié
+
+Les fibres facilitent le transit, rassasient et nourrissent les bonnes bactéries de l'intestin. Elles réduisent aussi le risque de maladies cardiovasculaires, de diabète de type 2 et de cancer colorectal.
+
+L'objectif est de **30 g par jour**. En France, les adultes en mangent environ 20 g. Le moyen le plus simple de combler l'écart est de passer d'un féculent raffiné à sa version complète.
+
+<FibreDay />
+
+Augmentez les fibres **progressivement** et buvez suffisamment : l'intestin s'habitue en quelques semaines.
+
+## Et l'index glycémique ?
+
+L'index glycémique dit à quelle vitesse un aliment fait monter le sucre dans le sang. Il varie selon la cuisson (des pâtes « al dente » font moins monter la glycémie que des pâtes très cuites), la transformation et le reste du repas. Les fibres, les protéines et les matières grasses du repas le ralentissent.
+
+C'est une notion utile, mais difficile à appliquer seule. Les repères plus haut suffisent : féculents complets, légumes à chaque repas, peu de sucres libres.
+
+<PourAllerPlusLoin titre="Les références en chiffres">
+
+| Repère | Valeur pour un adulte | Source |
+|---|---|---|
+| Glucides | 40 à 55 % de l'énergie | ANSES 2016 |
+| Sucres totaux, hors lactose et galactose | moins de 100 g par jour | ANSES 2016 |
+| Sucres libres | moins de 10 % de l'énergie, idéalement moins de 5 % (environ 25 g) | OMS 2015 |
+| Fibres | 30 g par jour | ANSES 2016 |
+| Féculents complets | au moins 1 fois par jour | PNNS 4 |
+
+Un morceau de sucre n° 4 pèse environ 5 g. Les quantités de sucre de l'outil sont calculées à partir de la table CIQUAL 2020 pour la portion indiquée. Pour les boissons, on compte 1 ml pour 1 g.
+
+</PourAllerPlusLoin>

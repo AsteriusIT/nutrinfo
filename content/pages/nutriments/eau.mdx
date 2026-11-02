@@ -1,0 +1,92 @@
+---
+type: page
+titre: Bien s'hydrater
+chapeau: L'eau est la seule boisson indispensable. Combien boire, quoi boire, et quelles boissons garder pour les occasions.
+theme: water
+rubrique: nutriments
+fil:
+  - { label: Accueil, href: / }
+  - { label: Nutriments }
+  - { label: L'eau }
+ages: [Tous les âges]
+duree: 5
+a_retenir:
+  - "Un adulte a besoin d'environ 1,5 à 2 litres de boissons par jour, davantage quand il fait chaud ou pendant un effort."
+  - "L'eau est la seule boisson indispensable. Boissons sucrées : pas plus d'un verre par jour."
+  - "Alcool : pas plus de 10 verres par semaine, pas plus de 2 par jour, et des jours sans."
+sources: [EFSA-eau, PNNS4, OMS-sucres, ANSES-energisantes, SPF-alcool, CIQUAL]
+maj: 2026-11-02
+relecture: non-relu
+---
+
+import { WaterGlasses, WaterInFood, StandardDrinks } from "~/components/hydration";
+import { SugarHunt } from "~/components/sugar";
+import { PourAllerPlusLoin } from "~/components/ui";
+
+## Pourquoi boire chaque jour ?
+
+Le corps est fait d'environ 60 % d'eau. Il en perd en permanence : par les urines, la transpiration et la respiration. Cette eau doit être remplacée chaque jour, car le corps ne sait pas la stocker.
+
+## Combien boire ?
+
+Les besoins totaux en eau sont d'environ **2 litres par jour pour une femme** et **2,5 litres pour un homme**. Les aliments en apportent une partie, les boissons le reste.
+
+<WaterGlasses />
+
+Le plus simple : boire **un peu, souvent**, tout au long de la journée, sans attendre d'avoir soif. Une urine claire est un bon signe.
+
+## L'eau cachée dans les aliments
+
+Fruits, légumes, soupes et laitages sont surtout faits d'eau. Ils comptent dans l'hydratation, d'où l'intérêt d'en manger à chaque repas.
+
+<WaterInFood />
+
+## Quoi boire ?
+
+- **L'eau**, du robinet ou en bouteille, à volonté. En France, l'eau du robinet est contrôlée et peut être bue sans risque, sauf avis contraire de votre mairie.
+- **Café et thé** non sucrés comptent dans les boissons, avec modération à cause de la caféine.
+- **Le lait** est un aliment autant qu'une boisson : il compte parmi les produits laitiers.
+
+Les boissons sucrées, elles, apportent beaucoup de sucre sans rassasier.
+
+<SugarHunt
+  titre="Le sucre dans les boissons"
+  ids={["eau", "the", "cola", "colaEdulcore", "jusOrange", "nectar", "energisante", "lait"]}
+  initial="cola"
+/>
+
+Les repères officiels : **pas plus d'un verre de boisson sucrée par jour**, jus de fruits compris. Les boissons « zéro » ou « light » ne sont pas une solution durable, car elles entretiennent le goût du sucré. Les **boissons énergisantes** sont déconseillées aux enfants, aux adolescents, aux femmes enceintes, pendant le sport et avec de l'alcool.
+
+## Les signes d'un manque d'eau
+
+Soif, urines foncées et peu abondantes, fatigue, maux de tête, difficulté à se concentrer. Certaines personnes ressentent moins la soif et doivent être aidées à boire :
+
+- les **bébés** et les **jeunes enfants**, qui ne peuvent pas toujours se servir ni le dire ;
+- les **personnes âgées**, dont la sensation de soif diminue ;
+- toute personne qui a de la **fièvre**, une **diarrhée**, ou qui fait un **effort par temps chaud**.
+
+En cas de canicule, buvez régulièrement, mangez des aliments riches en eau et restez au frais.
+
+## Et l'alcool ?
+
+L'alcool n'hydrate pas : il fait au contraire uriner davantage. C'est surtout un facteur de risque de plusieurs cancers dès les petites quantités. Les repères pour les adultes qui choisissent d'en boire : **pas plus de 10 verres standard par semaine**, **pas plus de 2 verres par jour**, et **des jours sans alcool** dans la semaine.
+
+<StandardDrinks />
+
+**Aucun alcool** pendant la grossesse et l'allaitement, ni chez les mineurs.
+
+<PourAllerPlusLoin titre="Apports en eau recommandés par l'EFSA">
+
+| Situation | Eau totale par jour (boissons et aliments) |
+|---|---|
+| Enfant de 4 à 8 ans | 1,6 L |
+| Garçon de 9 à 13 ans | 2,1 L |
+| Fille de 9 à 13 ans | 1,9 L |
+| Femme, à partir de 14 ans | 2,0 L |
+| Homme, à partir de 14 ans | 2,5 L |
+| Grossesse | + 0,3 L |
+| Allaitement | + 0,7 L |
+
+Ce sont des « apports adéquats » pour une température et une activité modérées (EFSA 2010). On estime que les aliments couvrent 20 à 30 % de ces besoins.
+
+</PourAllerPlusLoin>
