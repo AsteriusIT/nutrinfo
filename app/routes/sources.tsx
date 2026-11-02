@@ -2,7 +2,7 @@ import { PixelBand } from "~/components/pixel-band";
 import { sources } from "~/lib/content";
 
 export const meta = () => [
-  { title: "Nos sources et notre méthode | Asterius Nutrition" },
+  { title: "Nos sources et notre méthode | nutrinfo" },
   { name: "description", content: "Les références scientifiques et officielles utilisées sur le site." },
 ];
 

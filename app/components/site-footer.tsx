@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="mt-24 border-t-2 border-ink bg-faience">
       <div className="mx-auto grid max-w-[1240px] gap-10 px-4 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-6">
         <div>
-          <p className="heading text-lg">Asterius Nutrition</p>
+          <p className="heading text-lg">nutrinfo</p>
           <p className="mt-3 max-w-[44ch] text-muted">
             Des repères simples pour bien manger à chaque âge, tirés des recommandations officielles
             françaises et européennes.

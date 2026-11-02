@@ -55,7 +55,7 @@ export const sources = sourcesYaml as Source[];
 
 export function pageMeta(fm: PageFrontmatter) {
   return [
-    { title: `${fm.titre} | Asterius Nutrition` },
+    { title: `${fm.titre} | nutrinfo` },
     { name: "description", content: fm.chapeau },
   ];
 }

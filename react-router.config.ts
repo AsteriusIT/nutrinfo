@@ -1,7 +1,7 @@
 import type { Config } from "@react-router/dev/config";
 
 // Site 100 % statique : chaque route est pré-rendue en HTML au build.
-// BASE_PATH : sous-chemin de publication, par ex. "/asterius-nutrition/" sur GitHub Pages (doit finir par /).
+// BASE_PATH : sous-chemin de publication, par ex. "/nutrinfo/" sur GitHub Pages (doit finir par /).
 export default {
   ssr: false,
   prerender: true,

@@ -3,7 +3,7 @@ import { PixelBand } from "~/components/pixel-band";
 import { assistantActif, hebergeur } from "~/lib/config";
 
 export const meta = () => [
-  { title: "Données personnelles | Asterius Nutrition" },
+  { title: "Données personnelles | nutrinfo" },
   {
     name: "description",
     content: assistantActif

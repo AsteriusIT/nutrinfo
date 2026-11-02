@@ -7,7 +7,7 @@ import { PROFILS } from "~/data/profils";
 import { themes, type ThemeKey } from "~/lib/theme";
 
 export const meta = () => [
-  { title: "Asterius Nutrition : bien manger à chaque âge de la vie" },
+  { title: "nutrinfo : bien manger à chaque âge de la vie" },
   {
     name: "description",
     content:

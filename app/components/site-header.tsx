@@ -28,9 +28,9 @@ export function SiteHeader() {
         Aller au contenu
       </a>
       <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between gap-6 px-4 md:px-6">
-        <Link to="/" className="flex items-center gap-3" aria-label="Asterius Nutrition, accueil">
+        <Link to="/" className="flex items-center gap-3" aria-label="nutrinfo, accueil">
           <Logo />
-          <span className="heading text-lg">Asterius Nutrition</span>
+          <span className="heading text-lg">nutrinfo</span>
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden lg:block">

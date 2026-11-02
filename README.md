@@ -1,4 +1,4 @@
-# Asterius Nutrition
+# nutrinfo
 
 Site public d'information en français sur l'alimentation saine, adaptée à chaque âge de la vie.
 
@@ -32,7 +32,7 @@ Le workflow `.github/workflows/pages.yml` construit et publie le site à chaque 
 Pour tester ce build en local :
 
 ```bash
-BASE_PATH=/asterius-nutrition/ npm run build:pages   # résultat dans build/pages/
+BASE_PATH=/nutrinfo/ npm run build:pages   # résultat dans build/pages/
 ```
 
 | Variable | Effet |

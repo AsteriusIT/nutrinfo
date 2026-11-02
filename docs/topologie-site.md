@@ -1,4 +1,4 @@
-# Proposition de topologie — Asterius Nutrition
+# Proposition de topologie — nutrinfo
 
 > Site public d'information en français sur l'alimentation saine, selon l'âge et la situation de vie.
 > Mots d'ordre : **simple · coloré · UX soignée · centré sur l'utilisateur**.

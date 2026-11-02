@@ -3,7 +3,7 @@ import { PixelBand } from "~/components/pixel-band";
 import { PROFILS } from "~/data/profils";
 
 export const meta = () => [
-  { title: "Selon mon âge | Asterius Nutrition" },
+  { title: "Selon mon âge | nutrinfo" },
   {
     name: "description",
     content: "Ce qui change dans l'alimentation de la naissance au grand âge : bébé, enfant, adulte, grossesse, senior.",

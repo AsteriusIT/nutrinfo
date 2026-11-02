@@ -5,7 +5,7 @@ import { SourceBadges } from "~/components/ui";
 import { nutriments } from "~/lib/content";
 
 export const meta = () => [
-  { title: "Vitamines et minéraux | Asterius Nutrition" },
+  { title: "Vitamines et minéraux | nutrinfo" },
   {
     name: "description",
     content: "Le rôle, le besoin quotidien et les meilleures sources de chaque vitamine et minéral, sur une fiche.",

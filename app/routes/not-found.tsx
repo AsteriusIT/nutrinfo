@@ -1,6 +1,6 @@
 import { ButtonLink } from "~/components/ui";
 
-export const meta = () => [{ title: "Page introuvable | Asterius Nutrition" }];
+export const meta = () => [{ title: "Page introuvable | nutrinfo" }];
 
 export default function NotFound() {
   return (

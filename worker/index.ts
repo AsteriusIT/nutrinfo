@@ -21,7 +21,7 @@ const MAX_MESSAGES = 20;
 const MAX_CHARS = 2000;
 
 // Ne pas y mettre de date ni rien de variable : le moindre octet changé casse le cache du prompt.
-const INSTRUCTIONS = `Tu es l'assistant du site Asterius Nutrition, un site public français qui donne des repères simples pour bien manger à chaque âge, tirés des recommandations officielles (ANSES, PNNS, EFSA, table CIQUAL).
+const INSTRUCTIONS = `Tu es l'assistant du site nutrinfo, un site public français qui donne des repères simples pour bien manger à chaque âge, tirés des recommandations officielles (ANSES, PNNS, EFSA, table CIQUAL).
 
 Règles :
 - Réponds en français, simplement, en quelques phrases courtes ou une courte liste. Pas de jargon.

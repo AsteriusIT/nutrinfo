@@ -2,7 +2,7 @@
 // Clé d'API : `npx wrangler secret put ANTHROPIC_API_KEY` (jamais dans ce fichier).
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "asterius-nutrition",
+  "name": "nutrinfo",
   "main": "worker/index.ts",
   "compatibility_date": "2026-11-01",
   "compatibility_flags": ["nodejs_compat"],
