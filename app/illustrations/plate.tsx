@@ -83,7 +83,7 @@ function Zone({
       aria-pressed={selected}
       aria-label={`${z.nom}, ${z.part}`}
       onClick={() => onSelect(id)}
-      className={`group relative animate-tile overflow-hidden ${t.bg500} ${className} transition-[outline-color,filter] duration-150 hover:brightness-105 ${
+      className={`group relative animate-tile overflow-hidden rounded-md ${t.bg500} ${className} transition-[outline-color,filter] duration-150 hover:brightness-105 ${
         selected ? "outline-4 -outline-offset-4 outline-ink" : "outline-0"
       }`}
       style={{ animationDelay: `${120 + index * 90}ms` }}
@@ -111,7 +111,7 @@ export function PlateExplorer() {
     <div>
       <div className="grid grid-cols-[1fr_auto] gap-3 sm:gap-4">
         {/* L'assiette */}
-        <div className="aspect-square border-2 border-ink bg-plate p-2.5 sm:p-3.5">
+        <div className="aspect-square rounded-lg border-2 border-ink bg-plate p-2.5 sm:p-3.5">
           <div className="grid h-full grid-cols-2 grid-rows-2 gap-1.5">
             <Zone id="legumes" index={0} selected={actif === "legumes"} onSelect={setActif} className="row-span-2">
               <rect x="22" y="22" width="16" height="16" transform="rotate(45 30 30)" fill="var(--color-veg-800)" />
@@ -158,7 +158,7 @@ export function PlateExplorer() {
       {/* Repère de la case choisie */}
       <div
         aria-live="polite"
-        className={`mt-4 border-2 border-ink ${t.bg100} px-5 py-4`}
+        className={`mt-4 rounded-lg border-2 border-ink ${t.bg100} px-5 py-4`}
         key={actif}
       >
         <p className={`flex items-baseline justify-between gap-4 font-bold ${t.text800}`}>

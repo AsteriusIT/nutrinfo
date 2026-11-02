@@ -10,7 +10,7 @@
 
 ## 1. Principes
 
-1. **Zéro arrondi** : `border-radius: 0` partout (boutons, cartes, champs, images, badges). Seule exception : les éléments naturellement ronds (avatar éventuel, donut chart).
+1. **Arrondis doux** : `rounded-sm` (6 px) pour les étiquettes, `rounded-md` (10 px) pour les boutons, champs et choix, `rounded-lg` (16 px) pour les cartes, encadrés et panneaux. Les éléments graphiques (bande de pixels, logo, morceaux de sucre, cases des graphiques, formes des illustrations) restent carrés : c'est l'identité du site.
 2. **La grille est visible** : bordures fines de 1 px, blocs alignés, rythme de 8 px.
 3. **La couleur informe** : chaque famille thématique a sa couleur ; le fond reste neutre et chaud.
 4. **Le texte d'abord** : lisibilité > décoration. Une idée par bloc.
@@ -120,7 +120,7 @@ Graisse : 400 texte, 600 titres, 700 chiffres clés. Pas d'italique long, pas de
 @import "tailwindcss";
 
 @theme {
-  --radius-*: initial;            /* supprime tous les arrondis */
+  --radius-*: initial;            /* puis --radius-sm / md / lg, voir app/app.css */
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 

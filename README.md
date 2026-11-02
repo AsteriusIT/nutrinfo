@@ -25,6 +25,24 @@ npm run dev:api                                   # http://localhost:8787
 
 Mise en ligne : `npx wrangler secret put ANTHROPIC_API_KEY` (une fois), puis `npm run deploy`. Le modèle se change dans `wrangler.jsonc` (`CLAUDE_MODEL`). Voir la décision D8 dans `docs/decisions.md`.
 
+### Publier sur GitHub Pages (sans assistant)
+
+Le workflow `.github/workflows/pages.yml` construit et publie le site à chaque push sur `main`. À activer une fois dans le dépôt : **Settings > Pages > Source : GitHub Actions**. Le site est alors en ligne sur `https://<compte>.github.io/<dépôt>/`.
+
+Pour tester ce build en local :
+
+```bash
+BASE_PATH=/asterius-nutrition/ npm run build:pages   # résultat dans build/pages/
+```
+
+| Variable | Effet |
+|---|---|
+| `VITE_ASSISTANT=off` | retire l'assistant IA (bouton, appels à `/api/chat`, sections de la page Données personnelles) |
+| `VITE_HEBERGEUR=github` | cite GitHub Pages comme hébergeur dans la page Données personnelles |
+| `BASE_PATH` | sous-chemin de publication ; le workflow le déduit du nom du dépôt (variable de dépôt `BASE_PATH` pour un domaine personnalisé : `/`) |
+
+`npm run build:pages` fixe les deux premières variables.
+
 ## Où écrire le contenu
 
 | Type | Emplacement | Format |

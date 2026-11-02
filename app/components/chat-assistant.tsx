@@ -115,7 +115,7 @@ export function ChatAssistant() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed bottom-4 right-4 z-50 inline-flex min-h-12 items-center gap-3 border-2 border-ink bg-ink px-5 py-3 font-bold text-white shadow-[6px_6px_0_var(--color-veg-500)] transition-colors duration-150 hover:bg-veg-500 hover:text-dark md:bottom-6 md:right-6"
+        className="fixed bottom-4 right-4 z-50 inline-flex min-h-12 items-center gap-3 rounded-lg border-2 border-ink bg-ink px-5 py-3 font-bold text-white shadow-[6px_6px_0_var(--color-veg-500)] transition-colors duration-150 hover:bg-veg-500 hover:text-dark md:bottom-6 md:right-6"
       >
         <span className="grid h-4 w-4 grid-cols-2 gap-0.5" aria-hidden="true">
           <span className="bg-veg-500" />
@@ -133,7 +133,7 @@ export function ChatAssistant() {
       role="dialog"
       aria-labelledby="assistant-titre"
       onKeyDown={(e) => e.key === "Escape" && setOpen(false)}
-      className="animate-tile fixed inset-x-0 bottom-0 z-50 flex max-h-[85vh] flex-col border-2 border-ink bg-plate shadow-[8px_8px_0_var(--color-ink)] sm:inset-x-auto sm:bottom-6 sm:right-6 sm:h-[600px] sm:w-[420px]"
+      className="animate-tile fixed inset-x-0 bottom-0 z-50 flex max-h-[85vh] flex-col overflow-hidden rounded-t-lg border-2 border-ink bg-plate shadow-[8px_8px_0_var(--color-ink)] sm:inset-x-auto sm:bottom-6 sm:rounded-lg sm:right-6 sm:h-[600px] sm:w-[420px]"
     >
       <header className="flex items-center justify-between gap-4 border-b-2 border-ink bg-faience px-4 py-3">
         <div>
@@ -144,14 +144,14 @@ export function ChatAssistant() {
         </div>
         <div className="flex gap-2">
           {messages.length > 0 && (
-            <button type="button" onClick={reset} className="px-2 py-1 text-sm font-semibold hover:bg-plate">
+            <button type="button" onClick={reset} className="rounded-md px-2 py-1 text-sm font-semibold hover:bg-plate">
               Recommencer
             </button>
           )}
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="border-2 border-ink px-3 py-1 font-semibold hover:bg-ink hover:text-white"
+            className="rounded-md border-2 border-ink px-3 py-1 font-semibold hover:bg-ink hover:text-white"
           >
             Fermer
           </button>
@@ -168,7 +168,7 @@ export function ChatAssistant() {
                   <button
                     type="button"
                     onClick={() => void ask(q)}
-                    className="w-full border-2 border-line px-3 py-2 text-left hover:border-ink"
+                    className="w-full rounded-md border-2 border-line px-3 py-2 text-left hover:border-ink"
                   >
                     {q}
                   </button>
@@ -180,18 +180,18 @@ export function ChatAssistant() {
 
         {messages.map((m, i) =>
           m.role === "user" ? (
-            <p key={i} className="ml-8 bg-ink px-3 py-2 text-white">
+            <p key={i} className="ml-8 rounded-lg rounded-br-sm bg-ink px-3 py-2 text-white">
               {m.content}
             </p>
           ) : (
-            <div key={i} className="mr-4 border-l-4 border-veg-500 bg-veg-100 px-3 py-2">
+            <div key={i} className="mr-4 rounded-lg rounded-bl-sm border-l-4 border-veg-500 bg-veg-100 px-3 py-2">
               {m.content ? <Answer text={m.content} onNavigate={() => setOpen(false)} /> : <Typing />}
             </div>
           ),
         )}
 
         {error && (
-          <p role="alert" className="border-l-4 border-prot-500 bg-prot-100 px-3 py-2 text-prot-800">
+          <p role="alert" className="rounded-lg border-l-4 border-prot-500 bg-prot-100 px-3 py-2 text-prot-800">
             {error}
           </p>
         )}

@@ -19,6 +19,8 @@ const yamlData = (): Plugin => ({
 });
 
 export default defineConfig({
+  // Même sous-chemin que `basename` dans react-router.config.ts
+  base: process.env.BASE_PATH ?? "/",
   plugins: [
     tailwindcss(),
     yamlData(),

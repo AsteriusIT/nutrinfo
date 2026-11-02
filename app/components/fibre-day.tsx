@@ -67,7 +67,7 @@ export function FibreDay() {
                   type="button"
                   aria-pressed={on}
                   onClick={() => toggle(x.id)}
-                  className={`flex items-center gap-2 border-2 px-3 py-1.5 text-left transition-colors duration-150 ${
+                  className={`flex items-center gap-2 rounded-md border-2 px-3 py-1.5 text-left transition-colors duration-150 ${
                     on ? "border-ink bg-ink text-white" : "border-line hover:border-ink"
                   }`}
                 >

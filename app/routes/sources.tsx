@@ -27,7 +27,7 @@ export default function Sources() {
       <PixelBand />
       <div className="mx-auto max-w-[1240px] px-4 py-12 md:px-6">
         <h1 className="display max-w-[18ch] text-[2.5rem] md:text-7xl">Nos sources et notre méthode</h1>
-        <div className="mt-10 grid border-2 border-ink md:grid-cols-3">
+        <div className="mt-10 grid overflow-hidden rounded-lg border-2 border-ink md:grid-cols-3">
           {METHODE.map((m) => (
             <div key={m.titre} className="border-b-2 border-ink p-5 last:border-b-0 md:border-b-0 md:border-r-2 md:last:border-r-0">
               <h2 className="heading text-xl">{m.titre}</h2>

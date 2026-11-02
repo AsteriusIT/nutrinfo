@@ -6,7 +6,7 @@ import { themes } from "~/lib/theme";
 export function FicheCard({ fiche }: Readonly<{ fiche: Fiche }>) {
   const t = themes[fiche.theme];
   return (
-    <article className="flex h-full flex-col border-2 border-ink bg-plate">
+    <article className="flex h-full flex-col overflow-hidden rounded-lg border-2 border-ink bg-plate">
       <div className={`flex items-baseline justify-between gap-3 ${t.bg100} px-5 pb-3 pt-4`}>
         <h3 className="heading text-xl">{fiche.titre}</h3>
         <span className={`tag shrink-0 ${t.text800}`}>{fiche.etiquette}</span>
@@ -51,7 +51,7 @@ export function FicheGrid({
 
   return (
     <div>
-      <div className="grid gap-5 border-2 border-ink bg-faience p-4 md:grid-cols-[auto_1fr] md:gap-10 md:p-5">
+      <div className="grid gap-5 rounded-lg border-2 border-ink bg-faience p-4 md:grid-cols-[auto_1fr] md:gap-10 md:p-5">
         <fieldset>
           <legend className="text-sm font-bold">Afficher</legend>
           <div className="mt-2 flex">
@@ -61,7 +61,7 @@ export function FicheGrid({
                 type="button"
                 aria-pressed={cat === c.id}
                 onClick={() => setCat(c.id)}
-                className={`border-2 border-ink px-4 py-2 font-semibold transition-colors duration-150 [&+&]:-ml-0.5 ${
+                className={`border-2 border-ink px-4 py-2 font-semibold transition-colors duration-150 first:rounded-l-md last:rounded-r-md [&+&]:-ml-0.5 ${
                   cat === c.id ? "bg-ink text-white" : "bg-plate hover:bg-line"
                 }`}
               >
@@ -79,7 +79,7 @@ export function FicheGrid({
                 type="button"
                 aria-pressed={vig === v.id}
                 onClick={() => setVig((x) => (x === v.id ? null : v.id))}
-                className={`border-2 px-3 py-2 font-semibold transition-colors duration-150 ${
+                className={`rounded-md border-2 px-3 py-2 font-semibold transition-colors duration-150 ${
                   vig === v.id ? "border-age-800 bg-age-500 text-light" : "border-line bg-plate hover:border-ink"
                 }`}
               >
@@ -95,7 +95,7 @@ export function FicheGrid({
         {vigLabel && <span className="font-normal text-muted"> à surveiller pour : {vigLabel.toLowerCase()}</span>}
       </p>
       {visibles.length === 0 ? (
-        <p className="mt-4 border-2 border-dashed border-line p-6 text-muted">
+        <p className="mt-4 rounded-lg border-2 border-dashed border-line p-6 text-muted">
           Aucune fiche ne correspond. Retirez un filtre pour en voir davantage.
         </p>
       ) : (

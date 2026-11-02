@@ -5,6 +5,7 @@ import { ChatAssistant } from "./components/chat-assistant";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 import { themeScript } from "./components/theme-toggle";
+import { assistantActif } from "./lib/config";
 import "./app.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -16,6 +17,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#10131c" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <Meta />
         <Links />
@@ -26,7 +28,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           {children}
         </main>
         <SiteFooter />
-        <ChatAssistant />
+        {assistantActif && <ChatAssistant />}
         <ScrollRestoration />
         <Scripts />
       </body>

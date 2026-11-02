@@ -31,7 +31,7 @@ export function SugarJar({ libres, naturels }: Readonly<{ libres: number; nature
       : `${fr(total)} g de sucres, soit environ ${fr(total / G_PAR_MORCEAU)} morceaux, dont ${fr(libres)} g de sucres libres`;
 
   return (
-    <div className="bg-dark p-3" role="img" aria-label={label}>
+    <div className="rounded-md bg-dark p-3" role="img" aria-label={label}>
       <div className="relative grid grid-cols-5 gap-1.5" style={{ gridTemplateRows: `repeat(${rangees}, minmax(0, 1fr))` }}>
         {Array.from({ length: rangees * PAR_RANGEE }, (_, slot) => {
           // On remplit par le bas : la case 0 est en bas à gauche
@@ -115,7 +115,7 @@ export function SugarHunt({
                   type="button"
                   aria-pressed={on}
                   onClick={() => setActif(id)}
-                  className={`flex h-full w-full flex-col items-start border-2 px-3 py-2 text-left transition-colors duration-150 ${
+                  className={`flex h-full w-full flex-col items-start rounded-md border-2 px-3 py-2 text-left transition-colors duration-150 ${
                     on ? "border-ink bg-ink text-white" : "border-line hover:border-ink"
                   }`}
                 >
@@ -208,7 +208,7 @@ export function GouterBuilder() {
                         type="button"
                         aria-pressed={on}
                         onClick={() => toggle(id)}
-                        className={`border-2 px-3 py-1.5 text-left transition-colors duration-150 ${
+                        className={`rounded-md border-2 px-3 py-1.5 text-left transition-colors duration-150 ${
                           on ? "border-ink bg-ink text-white" : "border-line hover:border-ink"
                         }`}
                       >
@@ -224,7 +224,7 @@ export function GouterBuilder() {
         </div>
 
         <div>
-          <ul className="grid grid-cols-3 gap-px border-2 border-ink bg-ink" aria-label="Familles couvertes">
+          <ul className="grid grid-cols-3 gap-px overflow-hidden rounded-md border-2 border-ink bg-ink" aria-label="Familles couvertes">
             {UTILES.map((f) => {
               const ok = couvertes.includes(f);
               return (

@@ -6,7 +6,7 @@ import { themes, type ThemeKey } from "~/lib/theme";
 export function Tag({ children, theme }: Readonly<{ children: ReactNode; theme?: ThemeKey }>) {
   const t = theme ? themes[theme] : null;
   return (
-    <span className={`tag inline-block px-2 py-1 ${t ? `${t.bg100} ${t.text800}` : "bg-faience text-muted"}`}>
+    <span className={`tag inline-block rounded-sm px-2 py-1 ${t ? `${t.bg100} ${t.text800}` : "bg-faience text-muted"}`}>
       {children}
     </span>
   );
@@ -44,7 +44,7 @@ export function ButtonLink({
   return (
     <Link
       to={to}
-      className={`inline-flex min-h-12 items-center px-6 py-3 font-bold transition-colors duration-150 ${styles}`}
+      className={`inline-flex min-h-12 items-center rounded-md px-6 py-3 font-bold transition-colors duration-150 ${styles}`}
     >
       {children}
     </Link>
@@ -55,7 +55,7 @@ export function ButtonLink({
 export function KeyPoints({ items, theme }: Readonly<{ items: string[]; theme: ThemeKey }>) {
   const t = themes[theme];
   return (
-    <aside className={`border-l-8 ${t.border500} ${t.bg100} px-6 py-5`} aria-labelledby="essentiel">
+    <aside className={`rounded-lg border-l-8 ${t.border500} ${t.bg100} px-6 py-5`} aria-labelledby="essentiel">
       <h2 id="essentiel" className={`heading text-lg ${t.text800}`}>
         L'essentiel
       </h2>
@@ -74,7 +74,7 @@ export function KeyPoints({ items, theme }: Readonly<{ items: string[]; theme: T
 /** Niveau 3 de lecture : détails repliables */
 export function PourAllerPlusLoin({ titre, children }: Readonly<{ titre: string; children: ReactNode }>) {
   return (
-    <details className="group border-2 border-ink">
+    <details className="group overflow-hidden rounded-lg border-2 border-ink">
       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 font-bold hover:bg-faience [&::-webkit-details-marker]:hidden">
         <span>
           <span className="block text-sm font-semibold text-muted">Pour aller plus loin</span>
@@ -82,7 +82,7 @@ export function PourAllerPlusLoin({ titre, children }: Readonly<{ titre: string;
         </span>
         <span
           aria-hidden="true"
-          className="flex h-8 w-8 shrink-0 items-center justify-center border-2 border-ink text-xl leading-none group-open:bg-ink group-open:text-white"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-sm border-2 border-ink text-xl leading-none group-open:bg-ink group-open:text-white"
         >
           <span className="group-open:hidden">+</span>
           <span className="hidden group-open:inline">−</span>
@@ -105,7 +105,7 @@ export function ToolFrame({
   children,
 }: Readonly<{ titre: string; consigne?: string; children: ReactNode }>) {
   return (
-    <section className="not-prose my-12 border-2 border-ink bg-plate" aria-label={titre}>
+    <section className="not-prose my-12 overflow-hidden rounded-lg border-2 border-ink bg-plate" aria-label={titre}>
       <header className="flex flex-wrap items-baseline justify-between gap-2 border-b-2 border-ink bg-faience px-4 py-3 md:px-6">
         <h3 className="heading text-lg">{titre}</h3>
         {consigne && <p className="text-sm text-muted">{consigne}</p>}

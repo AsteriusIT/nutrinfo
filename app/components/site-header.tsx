@@ -12,7 +12,7 @@ const NAV = [
 ];
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
-  `block px-3 py-2 font-semibold transition-colors duration-150 ${
+  `block rounded-md px-3 py-2 font-semibold transition-colors duration-150 ${
     isActive ? "bg-ink text-white" : "hover:bg-faience"
   }`;
 
@@ -23,7 +23,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b-2 border-ink bg-plate">
       <a
         href="#contenu"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
       >
         Aller au contenu
       </a>
@@ -49,7 +49,7 @@ export function SiteHeader() {
           <ThemeToggle />
           <button
             type="button"
-            className="border-2 border-ink px-3 py-1.5 font-semibold lg:hidden"
+            className="rounded-md border-2 border-ink px-3 py-1.5 font-semibold lg:hidden"
             aria-expanded={open}
             aria-controls="menu-mobile"
             onClick={() => setOpen((o) => !o)}

@@ -6,6 +6,7 @@
   "scripts": {
     "prebuild": "node scripts/build-corpus.mjs",
     "build": "react-router build",
+    "build:pages": "VITE_ASSISTANT=off VITE_HEBERGEUR=github react-router build && node scripts/pages-postbuild.mjs",
     "dev": "react-router dev",
     "dev:api": "npm run build && wrangler dev",
     "preview": "serve build/client",

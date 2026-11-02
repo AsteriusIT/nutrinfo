@@ -43,7 +43,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={label}
       title={label}
-      className="grid h-10 w-10 shrink-0 place-items-center border-2 border-ink hover:bg-faience"
+      className="grid h-10 w-10 shrink-0 place-items-center rounded-md border-2 border-ink hover:bg-faience"
     >
       {/* Carré à moitié plein : la moitié pleine passe de côté avec le thème */}
       <span className="flex h-4 w-4 border-2 border-ink" aria-hidden="true">

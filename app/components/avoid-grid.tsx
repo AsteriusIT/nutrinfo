@@ -24,7 +24,7 @@ export function AvoidGrid() {
         {A_EVITER.map((a) => {
           const vu = vus.includes(a.id);
           return (
-            <li key={a.id} className={`border-2 border-ink ${vu ? "bg-faience" : "bg-plate"}`}>
+            <li key={a.id} className={`overflow-hidden rounded-lg border-2 border-ink ${vu ? "bg-faience" : "bg-plate"}`}>
               <div className="flex items-start justify-between gap-4 px-5 pt-4">
                 <div>
                   <h3 className="heading text-xl">{a.titre}</h3>

@@ -40,7 +40,7 @@ export default function Ages() {
           {etapes.map((p) => (
             <li key={p.id} className="relative">
               <span className="absolute -left-[2.25rem] top-6 h-5 w-5 border-4 border-plate bg-age-500 md:-left-[3.25rem]" aria-hidden="true" />
-              <article className="grid border-2 border-ink md:grid-cols-[15rem_1fr]">
+              <article className="grid overflow-hidden rounded-lg border-2 border-ink md:grid-cols-[15rem_1fr]">
                 <div className="border-b-2 border-ink bg-age-100 p-5 md:border-b-0 md:border-r-2">
                   <p className="figure text-age-800">{p.age}</p>
                   <h2 className="display mt-1 text-3xl">{p.label}</h2>
@@ -57,7 +57,7 @@ export default function Ages() {
                   {p.href && p.cta ? (
                     <Link
                       to={p.href}
-                      className="mt-5 inline-flex min-h-11 items-center bg-ink px-5 py-2.5 font-bold text-white transition-colors duration-150 hover:bg-age-500 hover:text-light"
+                      className="mt-5 inline-flex min-h-11 items-center rounded-md bg-ink px-5 py-2.5 font-bold text-white transition-colors duration-150 hover:bg-age-500 hover:text-light"
                     >
                       {p.cta}
                     </Link>

@@ -32,7 +32,7 @@ export function WaterGlasses() {
             {PROFILS.map((x) => (
               <label
                 key={x.id}
-                className={`flex-1 cursor-pointer whitespace-nowrap border-2 border-ink px-3 py-2.5 text-center font-semibold transition-colors duration-150 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ink [&+&]:-ml-0.5 ${
+                className={`flex-1 cursor-pointer whitespace-nowrap border-2 border-ink px-3 py-2.5 text-center font-semibold transition-colors duration-150 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ink first:rounded-l-md last:rounded-r-md [&+&]:-ml-0.5 ${
                   profil === x.id ? "bg-ink text-white" : "hover:bg-faience"
                 }`}
               >
@@ -44,7 +44,7 @@ export function WaterGlasses() {
         </fieldset>
 
         <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)]">
-          <div className="border-l-8 border-water-500 bg-water-100 px-4 py-3">
+          <div className="rounded-lg border-l-8 border-water-500 bg-water-100 px-4 py-3">
             <p className="font-bold text-water-800">À boire chaque jour</p>
             <p className="figure mt-1 text-5xl">
               {litres(boissons)}
@@ -127,7 +127,7 @@ export function WaterInFood() {
               </th>
               <td className="py-1">
                 <div className="flex items-center gap-2">
-                  <div className="h-6 flex-1 bg-faience">
+                  <div className="h-6 flex-1 overflow-hidden rounded-sm bg-faience">
                     <div className="h-full bg-water-500" style={{ width: `${a.eau}%` }} />
                   </div>
                   <span className="figure w-14 shrink-0 text-right">{Math.round(a.eau!)} %</span>

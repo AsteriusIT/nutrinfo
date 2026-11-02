@@ -108,7 +108,7 @@ function Reperes() {
         Le Programme national nutrition santé résume l'essentiel pour les adultes. Le PNNS 5, publié
         en avril 2026, garde ces repères.
       </p>
-      <div className="mt-10 grid gap-0 border-2 border-ink md:grid-cols-3">
+      <div className="mt-10 grid gap-0 overflow-hidden rounded-lg border-2 border-ink md:grid-cols-3">
         {REPERES.map((r) => {
           const t = themes[r.theme];
           return (
@@ -156,7 +156,7 @@ function ProfilSelector() {
         </h2>
         <p className="mt-4 text-muted">Choisissez une période de la vie.</p>
 
-        <div role="tablist" aria-label="Période de la vie" className="mt-8 grid grid-cols-2 gap-px border-2 border-ink bg-ink sm:grid-cols-5">
+        <div role="tablist" aria-label="Période de la vie" className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-t-lg border-2 border-ink bg-ink sm:grid-cols-5">
           {PROFILS.map((x) => (
             <button
               key={x.id}
@@ -176,7 +176,7 @@ function ProfilSelector() {
           ))}
         </div>
 
-        <div id="profil-panel" role="tabpanel" aria-labelledby={`tab-${p.id}`} className="border-x-2 border-b-2 border-ink bg-plate p-6 md:p-8">
+        <div id="profil-panel" role="tabpanel" aria-labelledby={`tab-${p.id}`} className="rounded-b-lg border-x-2 border-b-2 border-ink bg-plate p-6 md:p-8">
           <ul className="grid gap-5 md:grid-cols-3" key={p.id}>
             {p.points.map((pt) => (
               <li key={pt} className="flex animate-fade gap-3 text-lg font-semibold leading-snug">
@@ -211,7 +211,7 @@ function Explorer() {
             <li key={r.href}>
               <Link
                 to={r.href}
-                className="group flex h-full border-2 border-ink transition-[box-shadow,transform] duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--color-ink)]"
+                className="group flex h-full overflow-hidden rounded-lg border-2 border-ink transition-[box-shadow,transform] duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--color-ink)]"
               >
                 <span className={`w-5 shrink-0 ${t.bg500} transition-[width] duration-200 group-hover:w-8`} aria-hidden="true" />
                 <span className="p-5">

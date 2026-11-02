@@ -68,7 +68,7 @@ export function ProteinDay({ profilInitial = "adulte" }: Readonly<{ profilInitia
               {PROFILS.map((x) => (
                 <label
                   key={x.id}
-                  className={`flex-1 cursor-pointer border-2 border-ink px-3 py-2.5 text-center font-semibold transition-colors duration-150 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ink [&+&]:-ml-0.5 ${
+                  className={`flex-1 cursor-pointer border-2 border-ink px-3 py-2.5 text-center font-semibold transition-colors duration-150 has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ink first:rounded-l-md last:rounded-r-md [&+&]:-ml-0.5 ${
                     profil === x.id ? "bg-ink text-white" : "hover:bg-faience"
                   }`}
                 >
@@ -97,7 +97,7 @@ export function ProteinDay({ profilInitial = "adulte" }: Readonly<{ profilInitia
             />
           </div>
 
-          <div className="border-l-8 border-prot-500 bg-prot-100 px-4 py-3">
+          <div className="rounded-lg border-l-8 border-prot-500 bg-prot-100 px-4 py-3">
             <p className="font-bold text-prot-800">Besoin estimé</p>
             <p className="figure mt-1 text-5xl">
               {besoin}
@@ -120,7 +120,7 @@ export function ProteinDay({ profilInitial = "adulte" }: Readonly<{ profilInitia
                     type="button"
                     aria-pressed={on}
                     onClick={() => toggle(x.id)}
-                    className={`flex items-center gap-2 border-2 px-3 py-1.5 text-left transition-colors duration-150 ${
+                    className={`flex items-center gap-2 rounded-md border-2 px-3 py-1.5 text-left transition-colors duration-150 ${
                       on ? "border-ink bg-ink text-white" : "border-line hover:border-ink"
                     }`}
                   >

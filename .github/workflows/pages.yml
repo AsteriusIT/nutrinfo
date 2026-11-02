@@ -1,0 +1,54 @@
+# Publie le site statique (sans assistant IA) sur GitHub Pages à chaque push sur main.
+# Activation, une seule fois : Settings > Pages > Build and deployment > Source : « GitHub Actions ».
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      # Sous-chemin du site : « / » pour un dépôt <compte>.github.io ou un domaine personnalisé
+      # (variable de dépôt BASE_PATH), sinon « /<nom-du-dépôt>/ ».
+      - name: Sous-chemin
+        run: |
+          if [ -n "${{ vars.BASE_PATH }}" ]; then base="${{ vars.BASE_PATH }}"
+          elif [[ "${{ github.event.repository.name }}" == *.github.io ]]; then base="/"
+          else base="/${{ github.event.repository.name }}/"
+          fi
+          echo "BASE_PATH=$base" >> "$GITHUB_ENV"
+          echo "Sous-chemin : $base"
+
+      - run: npm run build:pages
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: build/pages
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

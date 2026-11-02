@@ -5,8 +5,13 @@
 
 /* Design system « Carré » v2 — voir docs/design-system.md et docs/revue-ux.md */
 @theme {
-  /* Zéro arrondi (exigence du brief) */
+  /* Arrondis doux et peu nombreux : étiquettes (sm), boutons et champs (md), cartes et panneaux (lg).
+     Les éléments graphiques (pixels, morceaux de sucre, cases des graphiques, logo) restent carrés. */
   --radius-*: initial;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
 
   --font-sans: "Atkinson Hyperlegible Next Variable", system-ui, sans-serif;
   --font-display: "Fraunces Variable", Georgia, serif;
