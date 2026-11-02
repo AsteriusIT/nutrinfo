@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router";
 import { NAVIGATION, rubriqueActive, type NavRubrique } from "~/lib/navigation";
+import { BoutonRecherche } from "./recherche";
 import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
@@ -77,6 +78,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <BoutonRecherche />
           <ThemeToggle />
           <button
             type="button"

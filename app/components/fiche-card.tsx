@@ -4,7 +4,7 @@ import type { Fiche } from "~/lib/content";
 /** Type 2 : carte d'information. Cinq éléments au plus, un seul chiffre clé. */
 export function FicheCard({ fiche }: Readonly<{ fiche: Fiche }>) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-lg border-2 border-ink bg-plate">
+    <article id={fiche.id} className="flex h-full scroll-mt-24 flex-col overflow-hidden rounded-lg border-2 border-ink bg-plate">
       <div className="flex items-baseline justify-between gap-3 border-b-2 border-ink px-5 pb-3 pt-4">
         <h3 className="heading text-xl">{fiche.titre}</h3>
         <span className="tag shrink-0 text-accent-800">{fiche.etiquette}</span>

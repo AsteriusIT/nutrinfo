@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { PixelBand } from "~/components/pixel-band";
+import { EXEMPLES, Loupe, ouvrirRecherche } from "~/components/recherche";
 import { ButtonLink } from "~/components/ui";
 import { PlateExplorer } from "~/illustrations/plate";
 import { PROFILS } from "~/data/profils";
@@ -82,15 +83,34 @@ function Hero() {
         <div>
           <h1 className="display text-[2.75rem] sm:text-6xl xl:text-[5.5rem]">Bien manger, à chaque âge de la vie</h1>
           <p className="mt-7 max-w-[46ch] text-lg md:text-xl">
-            Des repères clairs, tirés des recommandations des autorités de santé françaises et
-            européennes. Commencez par l'assiette : touchez une case pour lire son repère.
+            Des repères clairs, tirés des recommandations officielles françaises et européennes. Posez
+            votre question, la réponse vient avec sa source.
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <ButtonLink to="/bases/assiette">Composer mon assiette</ButtonLink>
-            <ButtonLink to="/ages" variant="secondary">
-              Voir les repères selon mon âge
-            </ButtonLink>
-          </div>
+          {/* La question d'abord : le champ ouvre la recherche, qui affiche la réponse avant les pages */}
+          <button
+            type="button"
+            onClick={() => ouvrirRecherche()}
+            className="mt-9 flex min-h-16 w-full max-w-xl items-center gap-4 rounded-lg border-2 border-ink bg-plate px-5 text-left text-lg shadow-[6px_6px_0_var(--color-accent-500)] transition-[box-shadow,transform] duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_var(--color-accent-500)]"
+          >
+            <Loupe className="h-6 w-6 shrink-0" />
+            <span className="flex-1 text-muted">Une question, un aliment, un nutriment…</span>
+          </button>
+          <ul className="mt-5 flex max-w-xl flex-wrap gap-2" aria-label="Questions fréquentes">
+            {EXEMPLES.slice(0, 4).map((q) => (
+              <li key={q}>
+                <button
+                  type="button"
+                  onClick={() => ouvrirRecherche(q)}
+                  className="rounded-md bg-faience px-3 py-1.5 text-left hover:bg-accent-100"
+                >
+                  {q}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-muted">
+            Ou touchez une case de l'assiette pour lire son repère.
+          </p>
         </div>
         <PlateExplorer />
       </div>

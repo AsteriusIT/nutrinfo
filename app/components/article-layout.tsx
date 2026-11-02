@@ -1,8 +1,9 @@
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 import { Link } from "react-router";
 import type { PageFrontmatter } from "~/lib/content";
 import { themes } from "~/lib/theme";
 import { PixelBand } from "./pixel-band";
+import { SommaireColonne, SommaireRepliable, useSommaire } from "./sommaire";
 import { KeyPoints, SourceBadges, Tag } from "./ui";
 
 const dateFr = (iso: string) => new Date(iso).toLocaleDateString("fr-FR", { month: "long", year: "numeric" });
@@ -10,6 +11,8 @@ const dateFr = (iso: string) => new Date(iso).toLocaleDateString("fr-FR", { mont
 /** Gabarit du type 1 : page plein contenu */
 export function ArticleLayout({ fm, children }: Readonly<{ fm: PageFrontmatter; children: ReactNode }>) {
   const t = themes[fm.theme];
+  const contenuRef = useRef<HTMLDivElement>(null);
+  const sommaire = useSommaire(contenuRef);
 
   return (
     <article>
@@ -47,18 +50,25 @@ export function ArticleLayout({ fm, children }: Readonly<{ fm: PageFrontmatter; 
       </header>
 
       <div className="mx-auto max-w-[1240px] px-4 md:px-6">
-        <div className="mx-auto max-w-[72ch] py-12">
-          <KeyPoints items={fm.a_retenir} />
-          <div className="prose-carre mt-4">{children}</div>
+        {/* Grand écran : le sommaire à gauche, le texte reste à 72 caractères */}
+        <div className="mx-auto max-w-[72ch] py-12 xl:grid xl:max-w-none xl:grid-cols-[15rem_minmax(0,72ch)] xl:justify-center xl:gap-14">
+          <SommaireColonne {...sommaire} />
+          <div>
+            <KeyPoints items={fm.a_retenir} />
+            <SommaireRepliable {...sommaire} />
+            <div ref={contenuRef} className="prose-carre mt-4">
+              {children}
+            </div>
 
-          <footer className="mt-16 space-y-3 border-t-2 border-ink pt-5">
-            <SourceBadges codes={fm.sources} />
-            <p className="text-sm text-muted">
-              Mis à jour en {dateFr(fm.maj)}.
-              {fm.relecture === "non-relu" &&
-                " Rédigé à partir des sources citées, en attente de relecture par un·e professionnel·le de la nutrition."}
-            </p>
-          </footer>
+            <footer className="mt-16 space-y-3 border-t-2 border-ink pt-5">
+              <SourceBadges codes={fm.sources} />
+              <p className="text-sm text-muted">
+                Mis à jour en {dateFr(fm.maj)}.
+                {fm.relecture === "non-relu" &&
+                  " Rédigé à partir des sources citées, en attente de relecture par un·e professionnel·le de la nutrition."}
+              </p>
+            </footer>
+          </div>
         </div>
       </div>
     </article>

@@ -2,6 +2,7 @@ import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration }
 
 import type { Route } from "./+types/root";
 import { ChatAssistant } from "./components/chat-assistant";
+import { Recherche } from "./components/recherche";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 import { themeScript } from "./components/theme-toggle";
@@ -28,6 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           {children}
         </main>
         <SiteFooter />
+        <Recherche />
         {assistantActif && <ChatAssistant />}
         <ScrollRestoration />
         <Scripts />

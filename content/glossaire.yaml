@@ -1,0 +1,139 @@
+# Glossaire : les mots techniques expliqués sur place.
+# Dans les pages MDX et les fiches « Apprendre », la première apparition de chaque mot devient
+# touchable et affiche sa définition. `formes` : toutes les écritures à reconnaître (pluriels…).
+# `voir` : page où en apprendre plus (facultatif). Mettre entre guillemets toute phrase avec « : ».
+
+- id: acide-amine
+  terme: Acide aminé
+  formes: [acides aminés, acide aminé]
+  definition: >-
+    Petite brique qui compose les protéines. Il en existe 20 ; 9 sont dits indispensables, car le corps
+    ne sait pas les fabriquer.
+  voir: /apprendre/proteines
+
+- id: amidon
+  terme: Amidon
+  formes: [amidon]
+  definition: >-
+    Glucide fait de longues chaînes de glucose, présent dans les féculents. Il est digéré peu à peu.
+  voir: /apprendre/glucides
+
+- id: feculents
+  terme: Féculents
+  formes: [féculents, féculent]
+  definition: "Aliments riches en amidon : pain, pâtes, riz, semoule, pommes de terre, légumes secs."
+  voir: /apprendre/glucides
+
+- id: legumineuses
+  terme: Légumineuses
+  formes: [légumineuses, légumineuse, légumes secs]
+  definition: >-
+    Graines de plantes à gousse, aussi appelées légumes secs : lentilles, pois chiches, haricots secs,
+    pois cassés. Riches en protéines et en fibres.
+  voir: /nutriments/proteines/animales-vs-vegetales
+
+- id: sucres-libres
+  terme: Sucres libres
+  formes: [sucres libres]
+  definition: >-
+    Sucre ajouté (par l'industrie ou à la maison), miel, sirops et sucre des jus de fruits. Ce sont eux
+    qu'il faut limiter, pas le sucre des fruits entiers.
+  voir: /nutriments/glucides
+
+- id: microbiote
+  terme: Microbiote
+  formes: [microbiote]
+  definition: Les milliards de bactéries qui vivent dans l'intestin. Les fibres les nourrissent.
+  voir: /apprendre/fibres
+
+- id: omega-3
+  terme: Oméga-3
+  formes: [oméga-3]
+  definition: >-
+    Famille de graisses que le corps ne sait pas fabriquer. On les trouve dans les huiles de colza et
+    de noix, les noix et les poissons gras.
+  voir: /apprendre/lipides
+
+- id: satures
+  terme: Acides gras saturés
+  formes: [acides gras saturés, graisses saturées, saturés]
+  definition: >-
+    Graisses surtout présentes dans le beurre, le fromage, la viande grasse et les huiles de palme et de
+    coco. À ne pas consommer en excès.
+  voir: /apprendre/lipides
+
+- id: kcal
+  terme: kcal (kilocalorie)
+  formes: [kilocalories, kilocalorie, kcal]
+  definition: >-
+    Unité qui mesure l'énergie des aliments. 1 kcal, c'est l'énergie qu'il faut pour réchauffer d'un
+    degré un litre d'eau.
+  voir: /apprendre/energie
+
+- id: denutrition
+  terme: Dénutrition
+  formes: [dénutrition]
+  definition: >-
+    Manque d'énergie et de protéines qui fait perdre du poids et des muscles. Fréquente après 70 ans ;
+    une perte de poids sans le vouloir doit être signalée au médecin.
+  voir: /ages/seniors
+
+- id: glycemie
+  terme: Glycémie
+  formes: [glycémie]
+  definition: Le taux de sucre (glucose) dans le sang.
+
+- id: apport-satisfaisant
+  terme: Apport satisfaisant
+  formes: [apport satisfaisant]
+  definition: >-
+    Quantité jugée suffisante pour la population quand les études ne permettent pas de fixer un besoin
+    précis.
+
+- id: folates
+  terme: Folates (vitamine B9)
+  formes: [acide folique, folates]
+  definition: >-
+    Vitamine B9, indispensable au développement du bébé en tout début de grossesse. L'acide folique est
+    sa forme en complément.
+  voir: /ages/grossesse
+
+- id: oligoelements
+  terme: Oligoéléments
+  formes: [oligoéléments, oligoélément, oligo-éléments]
+  definition: "Minéraux dont le corps n'a besoin qu'en toutes petites quantités : fer, zinc, iode, sélénium."
+  voir: /apprendre/mineraux
+
+- id: liposoluble
+  terme: Liposoluble
+  formes: [liposolubles, liposoluble]
+  definition: Qui se dissout dans les graisses, comme les vitamines A, D, E et K.
+  voir: /apprendre/vitamines
+
+- id: hydrosoluble
+  terme: Hydrosoluble
+  formes: [hydrosolubles, hydrosoluble]
+  definition: Qui se dissout dans l'eau, comme la vitamine C et les vitamines B.
+  voir: /apprendre/vitamines
+
+- id: pnns
+  terme: PNNS
+  formes: [PNNS]
+  definition: >-
+    Programme national nutrition santé : les recommandations officielles françaises pour bien manger et
+    bouger.
+  voir: /sources
+
+- id: anses
+  terme: ANSES
+  formes: [ANSES]
+  definition: >-
+    Agence nationale de sécurité sanitaire de l'alimentation. Elle fixe les repères nutritionnels en
+    France.
+  voir: /sources
+
+- id: ciqual
+  terme: CIQUAL
+  formes: [CIQUAL]
+  definition: La table de composition des aliments de l'ANSES, référence en France.
+  voir: /sources

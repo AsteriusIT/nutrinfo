@@ -34,6 +34,7 @@ for (const file of await listFiles(pagesDir, ".mdx")) {
 
 for (const file of [
   ...(await listFiles(join(root, "content/fiches"), ".yaml")).map((f) => relative(root, f)),
+  "content/glossaire.yaml",
   "content/sources.yaml",
   ...(await listFiles(join(root, "app/data"), ".ts")).map((f) => relative(root, f)),
 ]) {

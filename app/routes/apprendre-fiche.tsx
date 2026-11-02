@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router";
 import { CarresEnergie, VraiOuFaux } from "~/components/apprendre";
 import { PixelBand } from "~/components/pixel-band";
+import { creerTermes } from "~/components/terme";
 import { KeyPoints, SourceBadges, Tag } from "~/components/ui";
 import { bases } from "~/lib/content";
 import type { Route } from "./+types/apprendre-fiche";
@@ -22,6 +23,8 @@ export default function FicheApprendre() {
 
   const f = bases[index];
   const precedente = bases[index - 1];
+  // Mots techniques expliqués sur place, la première fois qu'ils apparaissent dans la fiche
+  const expliquer = creerTermes();
   const suivante = bases[index + 1];
 
   return (
@@ -51,7 +54,7 @@ export default function FicheApprendre() {
             </ol>
           </nav>
           <h1 className="display mt-8 max-w-[18ch] text-[2.5rem] md:text-7xl">{f.question}</h1>
-          <p className="mt-6 max-w-[58ch] text-lg md:text-xl">{f.reponse}</p>
+          <p className="mt-6 max-w-[58ch] text-lg md:text-xl">{expliquer(f.reponse)}</p>
           <div className="mt-8 flex flex-wrap gap-2">
             <Tag accent>
               Fiche {index + 1} sur {bases.length}
@@ -69,7 +72,7 @@ export default function FicheApprendre() {
             <h2 id="image-titre" className="heading text-2xl">
               Pour se le représenter
             </h2>
-            <p className="mt-3 text-lg">{f.image}</p>
+            <p className="mt-3 text-lg">{expliquer(f.image)}</p>
           </section>
 
           <section aria-labelledby="roles-titre">
@@ -80,7 +83,7 @@ export default function FicheApprendre() {
               {f.roles.map((r) => (
                 <li key={r} className="flex gap-3 rounded-lg border-2 border-line px-4 py-3">
                   <span className="mt-[0.45em] h-2.5 w-2.5 shrink-0 bg-accent-500" aria-hidden="true" />
-                  <span>{r}</span>
+                  <span>{expliquer(r)}</span>
                 </li>
               ))}
             </ul>
@@ -95,7 +98,7 @@ export default function FicheApprendre() {
                 <li key={s.nom} className="overflow-hidden rounded-lg border-2 border-ink">
                   <h3 className="border-b border-line bg-faience px-4 py-2.5 font-bold">{s.nom}</h3>
                   <div className="px-4 py-3">
-                    <p>{s.texte}</p>
+                    <p>{expliquer(s.texte)}</p>
                     <p className="mt-1.5 text-sm text-muted">
                       <span className="font-semibold">Exemples : </span>
                       {s.exemples}

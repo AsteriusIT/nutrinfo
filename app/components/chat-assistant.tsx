@@ -38,6 +38,18 @@ export function ChatAssistant() {
 
   useEffect(() => () => abortRef.current?.abort(), []);
 
+  // Question transmise par la recherche (« Poser la question à l'assistant »)
+  const askRef = useRef<(q: string) => void>(() => {});
+  askRef.current = (q) => void ask(q);
+  useEffect(() => {
+    const surQuestion = (e: Event) => {
+      setOpen(true);
+      askRef.current((e as CustomEvent<string>).detail);
+    };
+    window.addEventListener("nutrinfo:assistant", surQuestion);
+    return () => window.removeEventListener("nutrinfo:assistant", surQuestion);
+  }, []);
+
   const full = messages.length >= MAX_MESSAGES - 1;
 
   async function ask(question: string) {

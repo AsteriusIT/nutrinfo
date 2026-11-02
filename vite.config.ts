@@ -7,6 +7,8 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import { fileURLToPath } from "node:url";
 import { parse as parseYaml } from "yaml";
 import { defineConfig, type Plugin } from "vite";
+import { rechercheVite } from "./scripts/index-recherche.ts";
+import { remarkNutrinfo } from "./scripts/remark-nutrinfo.ts";
 
 // Les fichiers YAML de content/ deviennent des modules JSON au build :
 // aucun parseur YAML n'est envoyé au navigateur.
@@ -24,10 +26,17 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     yamlData(),
+    rechercheVite(fileURLToPath(new URL(".", import.meta.url))),
     {
       enforce: "pre",
       ...mdx({
-        remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter, remarkGfm],
+        remarkPlugins: [
+          remarkFrontmatter,
+          remarkMdxFrontmatter,
+          remarkGfm,
+          // Ancres des titres + mots du glossaire expliqués sur place
+          [remarkNutrinfo, { glossaire: fileURLToPath(new URL("./content/glossaire.yaml", import.meta.url)) }],
+        ],
         providerImportSource: undefined,
       }),
     },
