@@ -10,6 +10,9 @@ export default [
   route("ages/enfants", "routes/ages-enfants.tsx"),
   route("ages/grossesse", "routes/ages-grossesse.tsx"),
   route("ages/seniors", "routes/ages-seniors.tsx"),
+  // Apprendre les bases : fiches de content/fiches/bases.yaml
+  route("apprendre", "routes/apprendre.tsx"),
+  route("apprendre/:id", "routes/apprendre-fiche.tsx"),
   // Pages d'index et grilles de cartes (type 2)
   route("ages", "routes/ages.tsx"),
   route("nutriments/vitamines-et-mineraux", "routes/vitamines-et-mineraux.tsx"),

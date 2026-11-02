@@ -1,0 +1,382 @@
+# Fiches « Apprendre les bases » : une fiche par grande famille de nutriments.
+# L'ordre des fiches est l'ordre du parcours (fiche 1 sur 8, etc.).
+# Chiffres issus de docs/synthese/02-macronutriments.md et 03-micronutriments.md ;
+# énergie par gramme : règlement (UE) 1169/2011, annexe XIV.
+
+fiches:
+  - id: proteines
+    titre: Les protéines
+    court: Protéines
+    question: C'est quoi une protéine ?
+    theme: prot
+    reponse: >-
+      Les protéines sont les matériaux de construction du corps. Elles forment les muscles, la peau,
+      les os, et font fonctionner une grande partie de l'organisme.
+    image: >-
+      Imaginez un collier de perles. Chaque perle est un acide aminé, et il en existe 20 sortes.
+      L'ordre des perles donne à chaque protéine sa forme et son rôle. En digérant, le corps défait
+      les colliers des aliments pour fabriquer les siens.
+    kcal: 4
+    roles:
+      - Construire et réparer les muscles, la peau, les os et les cheveux.
+      - Fabriquer les enzymes, qui font avancer les réactions du corps.
+      - Fabriquer certaines hormones et les anticorps, qui nous défendent contre les microbes.
+      - Transporter des substances dans le sang, comme l'oxygène (hémoglobine).
+    sortes:
+      - nom: Protéines animales
+        texte: >-
+          Elles contiennent les 9 acides aminés que le corps ne sait pas fabriquer, dans de bonnes
+          proportions.
+        exemples: Viande, poisson, œufs, produits laitiers
+      - nom: Protéines végétales
+        texte: >-
+          Il leur manque souvent un peu d'un acide aminé : les céréales manquent de lysine, les
+          légumineuses de méthionine. Mangées sur la même journée, elles se complètent. Le soja est
+          complet à lui seul.
+        exemples: Lentilles, pois chiches, haricots, céréales, soja, fruits à coque
+    sources_alimentaires: [Viande, Poisson, Œufs, Produits laitiers, Légumineuses, Céréales, Soja et tofu, Fruits à coque]
+    chiffre:
+      valeur: "0,83 g"
+      legende: par kilo de poids et par jour pour un adulte
+      note: Environ 58 g pour 70 kg. Au moins 1 g par kilo après 70 ans.
+      source: AFSSA-2007
+    idee_recue:
+      affirmation: Il faut manger de la viande pour avoir assez de protéines.
+      verdict: Faux
+      explication: >-
+        En France, la plupart des adultes mangent plus de protéines qu'il n'en faut. Légumineuses,
+        céréales, œufs et produits laitiers en apportent aussi. Associer céréales et légumineuses dans
+        la journée (riz et lentilles, semoule et pois chiches) donne des protéines complètes.
+    a_retenir:
+      - Les protéines construisent et réparent le corps. Elles sont faites de 20 acides aminés, dont 9 que le corps ne sait pas fabriquer.
+      - "Un adulte a besoin d'environ 0,83 g par kilo et par jour, et d'au moins 1 g après 70 ans."
+      - On en trouve dans les aliments animaux et végétaux, qui se complètent.
+    lien: { href: /nutriments/proteines/animales-vs-vegetales, label: "Protéines animales ou végétales ?" }
+    sources: [AFSSA-2007, EFSA-DRV, ANSES-2019, UE-INCO, PNNS4]
+
+  - id: glucides
+    titre: Les glucides
+    court: Glucides
+    question: C'est quoi un glucide ?
+    theme: carb
+    reponse: >-
+      Les glucides sont le carburant principal du corps. Ce sont les sucres et l'amidon, qu'on trouve
+      surtout dans les féculents, les fruits et le lait.
+    image: >-
+      L'amidon est un long train de wagons de glucose. La digestion décroche les wagons un par un :
+      l'énergie arrive peu à peu. Le sucre, lui, arrive en wagons presque détachés : il passe très
+      vite dans le sang.
+    kcal: 4
+    roles:
+      - Donner de l'énergie aux muscles, surtout pendant l'effort.
+      - Nourrir le cerveau, qui fonctionne surtout au glucose.
+      - Faire des réserves dans le foie et les muscles, pour les heures sans repas.
+    sortes:
+      - nom: L'amidon
+        texte: Les glucides « complexes ». Ils sont digérés lentement, surtout dans les versions complètes.
+        exemples: Pain, pâtes, riz, pommes de terre, semoule, légumineuses
+      - nom: Les sucres des fruits et du lait
+        texte: Dans un fruit entier ou un laitage, ils ne posent pas de problème.
+        exemples: Fructose des fruits, lactose du lait
+      - nom: Les sucres libres
+        texte: Le sucre ajouté, le miel, les sirops et le sucre des jus de fruits. Ce sont eux qu'il faut limiter.
+        exemples: Sodas, bonbons, gâteaux, céréales sucrées
+    sources_alimentaires: [Pain, Pâtes, Riz, Pommes de terre, Légumineuses, Fruits, Lait et yaourts]
+    chiffre:
+      valeur: 40 à 55 %
+      legende: de l'énergie de la journée
+      note: "Sucres libres : idéalement moins de 25 g par jour pour un adulte, soit 5 morceaux de sucre."
+      source: ANSES-2016
+    idee_recue:
+      affirmation: Le pain et les pâtes font grossir.
+      verdict: Faux
+      explication: >-
+        Un gramme de glucides apporte 4 kcal, deux fois moins qu'un gramme de graisses. Ce sont
+        surtout les quantités et ce qu'on ajoute (beurre, crème, fromage) qui comptent. Les repères
+        conseillent des féculents chaque jour, de préférence complets.
+    a_retenir:
+      - Les glucides sont le carburant principal des muscles et du cerveau.
+      - Ils devraient apporter 40 à 55 % de l'énergie de la journée, surtout sous forme d'amidon.
+      - Ce sont les sucres libres qu'il faut limiter, pas les féculents.
+    lien: { href: /nutriments/glucides, label: "Glucides, sucres et fibres" }
+    sources: [ANSES-2016, OMS-sucres, UE-INCO, PNNS4]
+
+  - id: lipides
+    titre: Les lipides
+    court: Lipides
+    question: C'est quoi un lipide ?
+    theme: fat
+    reponse: >-
+      Les lipides sont les graisses. Ce sont la source d'énergie la plus concentrée, et le corps en a
+      besoin pour fabriquer ses cellules et son cerveau.
+    image: >-
+      Un truc pour les reconnaître : une graisse liquide à température ambiante, comme l'huile, contient
+      surtout des acides gras insaturés. Une graisse solide, comme le beurre, surtout des saturés.
+      Exception : les huiles de palme et de coco, solides et saturées.
+    kcal: 9
+    roles:
+      - Donner de l'énergie, et la mettre en réserve.
+      - Former l'enveloppe de chaque cellule du corps.
+      - Construire le cerveau et les yeux, grâce aux oméga-3.
+      - Transporter les vitamines A, D, E et K, qui se dissolvent dans les graisses.
+    sortes:
+      - nom: Acides gras saturés
+        texte: À ne pas dépasser (pas plus de 12 % de l'énergie de la journée).
+        exemples: Beurre, fromage, viandes grasses, huiles de palme et de coco
+      - nom: Mono-insaturés (oméga-9)
+        texte: Bons pour le cœur quand ils remplacent les saturés.
+        exemples: Huile d'olive, huile de colza, avocat, noisettes
+      - nom: Oméga-6 et oméga-3
+        texte: >-
+          Dits « essentiels » : le corps ne sait pas les fabriquer. On manque souvent d'oméga-3, d'où le
+          conseil des huiles de colza et de noix.
+        exemples: Huiles de colza, de noix, de lin, noix, poissons gras
+      - nom: Acides gras trans industriels
+        texte: Mauvais pour le cœur. À éviter.
+        exemples: Produits contenant des « huiles partiellement hydrogénées »
+    sources_alimentaires: [Huiles, Beurre, Fromages, Fruits à coque, Avocat, Poissons gras, Viandes]
+    chiffre:
+      valeur: 35 à 40 %
+      legende: de l'énergie de la journée
+      note: "Oméga-3 des poissons (EPA et DHA) : 500 mg par jour, soit un poisson gras par semaine environ."
+      source: ANSES-2016
+    idee_recue:
+      affirmation: Il faut manger le moins de graisses possible.
+      verdict: Faux
+      explication: >-
+        Les graisses sont indispensables : sans elles, pas d'oméga-3 ni de vitamines A, D, E et K.
+        L'enjeu est de bien les choisir : huiles de colza, de noix ou d'olive chaque jour, et du
+        poisson deux fois par semaine, dont un poisson gras.
+    a_retenir:
+      - Les lipides sont la source d'énergie la plus concentrée (9 kcal par gramme) et construisent nos cellules.
+      - "Le corps ne sait pas fabriquer les oméga-3 et les oméga-6 : il faut les manger."
+      - "Mieux vaut choisir ses graisses que les supprimer : colza, noix, olive, poissons gras."
+    sources: [ANSES-2016, ANSES-2011, UE-INCO, PNNS4]
+
+  - id: fibres
+    titre: Les fibres
+    court: Fibres
+    question: C'est quoi une fibre ?
+    theme: veg
+    reponse: >-
+      Les fibres sont la partie des végétaux que nous ne savons pas digérer. Elles traversent le tube
+      digestif et jouent un rôle important pour la santé.
+    image: >-
+      Les fibres passent l'estomac et l'intestin sans être digérées. Arrivées dans le côlon, elles
+      nourrissent les milliards de bactéries qui y vivent : le microbiote. C'est pour cela qu'elles
+      apportent un peu d'énergie.
+    kcal: 2
+    roles:
+      - Faciliter le transit intestinal.
+      - Rassasier plus longtemps.
+      - Nourrir les bonnes bactéries de l'intestin.
+      - Réduire le risque de maladies du cœur, de diabète de type 2 et de cancer colorectal.
+    sortes:
+      - nom: Fibres solubles
+        texte: Elles forment un gel qui ralentit l'absorption des sucres et du cholestérol.
+        exemples: Avoine, orge, légumineuses, pommes, agrumes
+      - nom: Fibres insolubles
+        texte: Elles donnent du volume et accélèrent le transit.
+        exemples: Son de blé, céréales complètes, peau des fruits et légumes
+    sources_alimentaires: [Légumes, Fruits avec la peau, Légumineuses, Céréales complètes, Fruits à coque, Graines]
+    chiffre:
+      valeur: 30 g
+      legende: de fibres par jour pour un adulte
+      note: En France, les adultes en mangent environ 20 g.
+      source: ANSES-2016
+    idee_recue:
+      affirmation: Les fibres, c'est seulement pour le transit.
+      verdict: Faux
+      explication: >-
+        Elles rassasient, nourrissent le microbiote et ralentissent le passage des sucres dans le
+        sang. Une alimentation riche en fibres est associée à moins de maladies cardiovasculaires, de
+        diabète de type 2 et de cancer colorectal.
+    a_retenir:
+      - Les fibres sont la partie des végétaux qu'on ne digère pas. Elles nourrissent le microbiote.
+      - L'objectif est de 30 g par jour ; on en mange en moyenne 20 g.
+      - Légumes, fruits, légumineuses et céréales complètes en sont les meilleures sources.
+    lien: { href: /nutriments/glucides, label: "Glucides, sucres et fibres" }
+    sources: [ANSES-2016, UE-INCO]
+
+  - id: eau
+    titre: L'eau
+    court: Eau
+    question: À quoi sert l'eau dans le corps ?
+    theme: water
+    reponse: >-
+      L'eau est le premier constituant du corps et la seule boisson indispensable. Le corps en perd
+      chaque jour et ne sait pas la stocker.
+    image: >-
+      Le corps d'un adulte est fait à environ 60 % d'eau. Pour une personne de 70 kg, cela fait
+      environ 40 litres. Elle en perd chaque jour par les urines, la transpiration et la respiration.
+    kcal: 0
+    roles:
+      - Transporter les nutriments et l'oxygène dans le sang.
+      - Garder le corps à 37 °C grâce à la transpiration.
+      - Éliminer les déchets par les urines.
+      - Permettre la digestion (salive, sucs digestifs).
+    sortes:
+      - nom: Les boissons
+        texte: La plus grande partie de l'eau que nous recevons. L'eau du robinet convient très bien.
+        exemples: Eau, thé et café non sucrés, soupes
+      - nom: Les aliments
+        texte: Ils couvrent 20 à 30 % des besoins.
+        exemples: Fruits, légumes, laitages, plats cuisinés
+      - nom: Le corps lui-même
+        texte: Il en fabrique un peu en utilisant les nutriments pour produire de l'énergie.
+        exemples: Environ un quart de litre par jour
+    sources_alimentaires: [Eau, Fruits, Légumes, Soupes, Laitages]
+    chiffre:
+      valeur: 2 L
+      legende: d'eau par jour pour une femme, 2,5 L pour un homme
+      note: Boissons et aliments compris, pour une température et une activité modérées.
+      source: EFSA-eau
+    idee_recue:
+      affirmation: Il suffit d'attendre d'avoir soif pour boire.
+      verdict: Pas si simple
+      explication: >-
+        La soif est un bon signal pour un adulte en bonne santé, mais elle diminue avec l'âge, et les
+        jeunes enfants ne peuvent pas toujours la dire. Le plus simple : boire un peu, souvent, tout au
+        long de la journée.
+    a_retenir:
+      - Le corps est fait à 60 % d'eau. Il en perd chaque jour et ne la stocke pas.
+      - "Besoins totaux : environ 2 L par jour pour une femme, 2,5 L pour un homme, aliments compris."
+      - L'eau est la seule boisson indispensable.
+    lien: { href: /nutriments/eau, label: "Bien s'hydrater" }
+    sources: [EFSA-eau, PNNS4]
+
+  - id: vitamines
+    titre: Les vitamines
+    court: Vitamines
+    question: C'est quoi une vitamine ?
+    theme: tool
+    reponse: >-
+      Les vitamines sont des substances dont le corps a besoin en toute petite quantité pour
+      fonctionner. Il ne sait pas les fabriquer (ou pas assez) : elles doivent venir de l'alimentation.
+    image: >-
+      Les vitamines sont comme les outils d'un atelier : elles n'apportent pas d'énergie, mais sans
+      elles, le travail ne se fait pas. Il en faut très peu : quelques milligrammes, parfois quelques
+      microgrammes (millionièmes de gramme) par jour.
+    kcal: 0
+    roles:
+      - Aider le corps à tirer l'énergie des aliments (vitamines B).
+      - Voir dans la pénombre (A), solidifier les os (D, K), coaguler le sang (K).
+      - Défendre l'organisme contre les infections (C, D).
+      - Fabriquer les globules rouges et protéger le système nerveux (B9, B12).
+    sortes:
+      - nom: Vitamines liposolubles (A, D, E, K)
+        texte: >-
+          Elles se dissolvent dans les graisses et se stockent dans le corps. Prises en compléments,
+          les vitamines A et D peuvent être dangereuses à forte dose.
+        exemples: Beurre, œufs, poissons gras, huiles, légumes verts
+      - nom: Vitamines hydrosolubles (C et les 8 vitamines B)
+        texte: >-
+          Elles se dissolvent dans l'eau et se stockent peu (sauf la B12) : il en faut régulièrement.
+          La B12 ne se trouve que dans les aliments d'origine animale.
+        exemples: Fruits, légumes, céréales complètes, légumineuses, produits animaux
+    sources_alimentaires: [Fruits, Légumes, Céréales complètes, Légumineuses, Œufs, Poissons, Produits laitiers, Soleil (vitamine D)]
+    chiffre:
+      valeur: "13"
+      legende: vitamines, dont 4 qui se stockent dans les graisses
+      note: "A, B1, B2, B3, B5, B6, B8, B9, B12, C, D, E et K."
+      source: ANSES-2021
+    idee_recue:
+      affirmation: Plus on prend de vitamines, mieux c'est.
+      verdict: Faux
+      explication: >-
+        Une alimentation variée couvre presque tous les besoins. Les compléments ne sont utiles que
+        dans des cas précis (vitamine D chez l'enfant, B9 avant une grossesse, B12 pour les végans), et
+        les vitamines A et D en excès sont dangereuses. Demandez l'avis d'un médecin.
+    a_retenir:
+      - "Il existe 13 vitamines. Elles n'apportent pas d'énergie mais sont indispensables."
+      - Une alimentation variée, riche en fruits et légumes, couvre presque tous les besoins.
+      - Les compléments ne sont utiles que dans des cas précis, sur avis médical.
+    lien: { href: /nutriments/vitamines-et-mineraux, label: "Vitamines et minéraux, fiche par fiche" }
+    sources: [ANSES-2021, SFP-vitD]
+
+  - id: mineraux
+    titre: Les minéraux
+    court: Minéraux
+    question: C'est quoi un minéral ?
+    theme: dairy
+    reponse: >-
+      Les minéraux sont des éléments, comme le calcium ou le fer, que le corps utilise pour ses os, son
+      sang et ses nerfs. Il ne sait pas les fabriquer.
+    image: >-
+      Les minéraux viennent de la terre et de l'eau. Les plantes les puisent dans le sol, les animaux les
+      trouvent dans les plantes, et nous dans les deux. C'est aussi pour cela que certaines eaux
+      minérales en apportent.
+    kcal: 0
+    roles:
+      - Construire les os et les dents (calcium, phosphore, magnésium).
+      - Transporter l'oxygène dans le sang (fer).
+      - Faire fonctionner la thyroïde (iode).
+      - Faire passer l'influx dans les nerfs et contracter les muscles (sodium, potassium, magnésium).
+    sortes:
+      - nom: Les macroéléments
+        texte: Le corps en a besoin en quantités importantes, de quelques centaines de milligrammes à quelques grammes par jour.
+        exemples: Calcium, phosphore, magnésium, sodium, potassium
+      - nom: Les oligoéléments
+        texte: Indispensables, mais en toutes petites quantités (milligrammes ou microgrammes).
+        exemples: Fer, zinc, iode, sélénium, cuivre
+    sources_alimentaires: [Produits laitiers, Légumineuses, Céréales complètes, Fruits à coque, Viande et poisson, Fruits et légumes, Eaux minérales]
+    chiffre:
+      valeur: 5 g
+      legende: de sel par jour au maximum
+      note: En France, les adultes en mangent environ 8 à 9 g.
+      source: OMS-sel
+    idee_recue:
+      affirmation: Le sel qu'on mange vient surtout de la salière.
+      verdict: Faux
+      explication: >-
+        Environ les trois quarts du sel sont déjà dans les aliments qu'on achète : pain, charcuterie,
+        fromages, plats préparés, biscuits apéritifs. Cuisiner soi-même aide à en manger moins.
+    a_retenir:
+      - Les minéraux viennent du sol et de l'eau. Le corps ne sait pas les fabriquer.
+      - "Calcium pour les os, fer pour le sang, iode pour la thyroïde : chacun a son rôle."
+      - Le sel, lui, est en trop. Pas plus de 5 g par jour, et il est surtout caché dans les aliments.
+    lien: { href: /nutriments/vitamines-et-mineraux, label: "Vitamines et minéraux, fiche par fiche" }
+    sources: [ANSES-2021, OMS-sel]
+
+  - id: energie
+    titre: L'énergie et les calories
+    court: Énergie et calories
+    question: C'est quoi une calorie ?
+    theme: age
+    reponse: >-
+      La calorie est l'unité qui mesure l'énergie apportée par les aliments. Seuls les glucides, les
+      lipides, les protéines (et l'alcool) en apportent.
+    image: >-
+      La calorie mesure l'énergie comme le litre mesure un volume. Une kilocalorie (kcal), c'est
+      l'énergie qu'il faut pour réchauffer d'un degré un litre d'eau. Sur les étiquettes, l'énergie est
+      aussi donnée en kilojoules : 1 kcal = 4,18 kJ.
+    roles:
+      - "Faire fonctionner le corps au repos (cœur, respiration, cerveau, 37 °C) : c'est la plus grande part."
+      - Bouger, marcher, faire du sport.
+      - Digérer les repas.
+      - Grandir, chez l'enfant et l'adolescent.
+    sortes:
+      - nom: Ce qui apporte de l'énergie
+        texte: Les lipides (9 kcal par gramme), l'alcool (7), les protéines et les glucides (4), les fibres (2).
+        exemples: Huiles, féculents, viandes, légumineuses
+      - nom: Ce qui n'en apporte pas
+        texte: L'eau, les vitamines et les minéraux. Ils sont pourtant indispensables.
+        exemples: Eau, fruits et légumes (très peu caloriques)
+    sources_alimentaires: [Féculents, Matières grasses, Viandes, Poissons, Œufs, Légumineuses, Produits sucrés]
+    chiffre:
+      valeur: 2000 kcal
+      legende: par jour, l'apport de référence d'un adulte sur les étiquettes
+      note: "Les besoins réels varient selon l'âge, le sexe, la taille et l'activité."
+      source: UE-INCO
+    idee_recue:
+      affirmation: Une calorie de soda vaut une calorie de légumes.
+      verdict: Pas si simple
+      explication: >-
+        L'énergie est la même, mais pas l'effet. Le soda ne rassasie pas et n'apporte rien d'autre que
+        du sucre. Les légumes apportent des fibres, des vitamines et des minéraux, et calent pour
+        longtemps.
+    a_retenir:
+      - La calorie mesure l'énergie des aliments. 1 g de lipides apporte 9 kcal, 1 g de glucides ou de protéines 4 kcal.
+      - La plus grande partie de l'énergie sert juste à faire fonctionner le corps au repos.
+      - Les besoins varient selon l'âge et l'activité ; la qualité des aliments compte autant que leurs calories.
+    sources: [UE-INCO, ANSES-2016]

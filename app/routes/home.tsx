@@ -53,6 +53,7 @@ const REPERES: { titre: string; sens: string; theme: ThemeKey; items: [string, s
 ];
 
 const DISPONIBLE: { titre: string; texte: string; href: string; theme: ThemeKey }[] = [
+  { titre: "Apprendre les bases", texte: "C'est quoi une protéine, un glucide, une calorie ? 8 fiches courtes.", href: "/apprendre", theme: "tool" },
   { titre: "Composer son assiette", texte: "Remplissez une assiette et voyez si elle est équilibrée.", href: "/bases/assiette", theme: "veg" },
   { titre: "Protéines animales ou végétales ?", texte: "Comparez, calculez votre besoin, associez céréales et légumineuses.", href: "/nutriments/proteines/animales-vs-vegetales", theme: "prot" },
   { titre: "Glucides, sucres et fibres", texte: "Voyez où se cache le sucre et composez une journée riche en fibres.", href: "/nutriments/glucides", theme: "carb" },
@@ -61,7 +62,7 @@ const DISPONIBLE: { titre: string; texte: string; href: string; theme: ThemeKey 
   { titre: "Selon mon âge", texte: "Ce qui change pour les enfants, pendant la grossesse et après 65 ans.", href: "/ages", theme: "age" },
 ];
 
-const A_VENIR = ["Bonnes graisses", "Lire une étiquette", "Bébés de 0 à 3 ans"];
+const A_VENIR = ["Quelle huile choisir ?", "Lire une étiquette", "Bébés de 0 à 3 ans"];
 
 export default function Home() {
   return (

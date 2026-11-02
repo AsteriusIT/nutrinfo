@@ -24,6 +24,16 @@
   organisme: ANSES
   annee: "2021"
   url: https://www.anses.fr/fr/article/references-nutritionnelles-vitamines-mineraux
+- code: ANSES-2011
+  titre: Actualisation des apports nutritionnels conseillés pour les acides gras (saisine 2006-SA-0359)
+  organisme: ANSES
+  annee: "2011"
+  url: https://www.anses.fr
+- code: UE-INCO
+  titre: Règlement (UE) n° 1169/2011 concernant l'information des consommateurs sur les denrées alimentaires (annexes XIII et XIV)
+  organisme: Union européenne
+  annee: "2011"
+  url: https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R1169
 - code: AFSSA-2007
   titre: Apport en protéines — consommation, qualité, besoins et recommandations
   organisme: AFSSA (aujourd'hui ANSES)

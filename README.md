@@ -49,6 +49,8 @@ BASE_PATH=/nutrinfo/ npm run build:pages   # résultat dans build/pages/
 |---|---|---|
 | Page plein contenu | `content/pages/**.mdx` + un fichier de route de 4 lignes (`mdxPage`, voir `app/routes/ages-seniors.tsx`) + une ligne dans `app/routes.ts` | MDX avec frontmatter (voir `docs/modele-contenu.md`) |
 | Cartes d'information | `content/fiches/*.yaml` | YAML |
+| Fiches « Apprendre les bases » | `content/fiches/bases.yaml` (une entrée = une page `/apprendre/<id>`, rien d'autre à créer) | YAML, voir le type `FicheBase` dans `app/lib/content.ts`. Mettre entre guillemets toute phrase qui contient « : » |
+| Menu et plan du site | `app/lib/navigation.ts` | Une rubrique = un menu déroulant ; le pied de page suit |
 | Bibliographie | `content/sources.yaml` | YAML (le `code` sert de badge et d'ancre) |
 
 Composants : `app/components/`, illustrations maison (CC0) : `app/illustrations/`, design system : `app/app.css`.
