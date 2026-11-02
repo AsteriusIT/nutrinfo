@@ -44,8 +44,8 @@ export function WaterGlasses() {
         </fieldset>
 
         <div className="mt-6 grid gap-6 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)]">
-          <div className="rounded-lg border-l-8 border-water-500 bg-water-100 px-4 py-3">
-            <p className="font-bold text-water-800">À boire chaque jour</p>
+          <div className="rounded-lg border-l-8 border-accent-500 bg-accent-100 px-4 py-3">
+            <p className="font-bold text-accent-800">À boire chaque jour</p>
             <p className="figure mt-1 text-5xl">
               {litres(boissons)}
             </p>
@@ -69,7 +69,7 @@ export function WaterGlasses() {
                       className="relative block aspect-[3/4] w-full border-[3px] border-t-0 border-ink bg-plate"
                     >
                       <span
-                        className="absolute inset-x-0 bottom-0 bg-water-500 transition-[height] duration-500 ease-(--ease-carre)"
+                        className="absolute inset-x-0 bottom-0 bg-ink transition-[height] duration-500 ease-(--ease-carre)"
                         style={{ height: plein ? "86%" : "0%" }}
                       />
                     </button>
@@ -128,7 +128,7 @@ export function WaterInFood() {
               <td className="py-1">
                 <div className="flex items-center gap-2">
                   <div className="h-6 flex-1 overflow-hidden rounded-sm bg-faience">
-                    <div className="h-full bg-water-500" style={{ width: `${a.eau}%` }} />
+                    <div className="h-full bg-ink" style={{ width: `${a.eau}%` }} />
                   </div>
                   <span className="figure w-14 shrink-0 text-right">{Math.round(a.eau!)} %</span>
                 </div>
@@ -161,8 +161,8 @@ export function StandardDrinks() {
           return (
             <li key={v.nom} className="flex flex-col">
               <div className="relative mx-auto w-full max-w-24 border-[3px] border-t-0 border-ink" style={{ height: `${(v.ml / max) * 9 + 2}rem` }}>
-                <div className="absolute inset-x-0 bottom-0 top-[12%] bg-carb-100" />
-                <div className="absolute inset-x-0 bottom-0 bg-carb-500" style={{ height: `${0.88 * v.degre}%`, minHeight: "0.375rem" }} />
+                <div className="absolute inset-x-0 bottom-0 top-[12%] bg-faience" />
+                <div className="absolute inset-x-0 bottom-0 bg-ink" style={{ height: `${0.88 * v.degre}%`, minHeight: "0.375rem" }} />
               </div>
               <p className="mt-2 font-semibold leading-tight">{v.nom}</p>
               <p className="text-sm text-muted">{v.volume}</p>

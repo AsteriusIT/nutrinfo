@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router";
 import { NAVIGATION, rubriqueActive, type NavRubrique } from "~/lib/navigation";
-import { themes } from "~/lib/theme";
 import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
@@ -133,7 +132,7 @@ function PanneauRubrique({ rubrique: r, pathname }: Readonly<{ rubrique: NavRubr
           <Link
             to={r.accueil.href}
             aria-current={accueilActif ? "page" : undefined}
-            className="mt-4 inline-flex min-h-11 items-center rounded-md bg-ink px-4 py-2 font-bold text-white transition-colors duration-150 hover:bg-veg-500 hover:text-dark"
+            className="mt-4 inline-flex min-h-11 items-center rounded-md bg-ink px-4 py-2 font-bold text-white transition-colors duration-150 hover:bg-accent-500 hover:text-dark"
           >
             {r.accueil.label}
           </Link>
@@ -157,16 +156,13 @@ function LienMenu({ lien: l, compact = false }: Readonly<{ lien: NavRubrique["li
       to={l.href}
       end
       className={({ isActive }) =>
-        `group flex items-start gap-3 rounded-md ${compact ? "px-2 py-2" : "px-3 py-2.5"} transition-colors duration-150 ${isActive ? "bg-faience" : "hover:bg-faience"}`
+        `block rounded-md ${compact ? "px-2 py-2" : "px-3 py-2.5"} transition-colors duration-150 ${isActive ? "bg-accent-100" : "hover:bg-faience"}`
       }
     >
       {({ isActive }) => (
         <>
-          <span className={`mt-1.5 h-3 w-3 shrink-0 ${themes[l.theme].bg500}`} aria-hidden="true" />
-          <span>
-            <span className={`block font-semibold ${isActive ? "underline underline-offset-4" : ""}`}>{l.label}</span>
-            {!compact && <span className="block text-sm text-muted">{l.description}</span>}
-          </span>
+          <span className={`block font-semibold ${isActive ? "text-accent-800" : ""}`}>{l.label}</span>
+          {!compact && <span className="block text-sm text-muted">{l.description}</span>}
         </>
       )}
     </NavLink>

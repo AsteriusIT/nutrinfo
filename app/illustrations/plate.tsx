@@ -12,7 +12,7 @@ type ZoneId = "legumes" | "feculents" | "proteines" | "eau" | "laitier" | "fruit
 
 const ZONES: Record<
   ZoneId,
-  { nom: string; part: string; theme: ThemeKey; repere: string; detail: string; lien?: { href: string; label: string } }
+  { nom: string; part: string; theme?: ThemeKey; repere: string; detail: string; lien?: { href: string; label: string } }
 > = {
   legumes: {
     nom: "Légumes",
@@ -39,14 +39,12 @@ const ZONES: Record<
   eau: {
     nom: "Eau",
     part: "À volonté",
-    theme: "water",
     repere: "La seule boisson indispensable",
     detail: "Environ 1,5 litre de boissons par jour, plus quand il fait chaud ou après le sport.",
   },
   laitier: {
     nom: "Produit laitier",
     part: "2 par jour",
-    theme: "dairy",
     repere: "Deux produits laitiers par jour pour un adulte",
     detail: "Lait, yaourt ou fromage. Ils apportent calcium et protéines.",
     lien: { href: "/nutriments/vitamines-et-mineraux", label: "Voir les besoins en calcium" },
@@ -76,14 +74,15 @@ function Zone({
   children: React.ReactNode;
 }>) {
   const z = ZONES[id];
-  const t = themes[z.theme];
+  // Eau et produits laitiers : en neutre, pour s'en tenir aux couleurs de l'assiette
+  const fond = z.theme ? themes[z.theme].bg500 : "bg-faience";
   return (
     <button
       type="button"
       aria-pressed={selected}
       aria-label={`${z.nom}, ${z.part}`}
       onClick={() => onSelect(id)}
-      className={`group relative animate-tile overflow-hidden rounded-md ${t.bg500} ${className} transition-[outline-color,filter] duration-150 hover:brightness-105 ${
+      className={`group relative animate-tile overflow-hidden rounded-md ${fond} ${className} transition-[outline-color,filter] duration-150 hover:brightness-105 ${
         selected ? "outline-4 -outline-offset-4 outline-ink" : "outline-0"
       }`}
       style={{ animationDelay: `${120 + index * 90}ms` }}
@@ -105,7 +104,6 @@ function Zone({
 export function PlateExplorer() {
   const [actif, setActif] = useState<ZoneId>("legumes");
   const z = ZONES[actif];
-  const t = themes[z.theme];
 
   return (
     <div>
@@ -116,7 +114,7 @@ export function PlateExplorer() {
             <Zone id="legumes" index={0} selected={actif === "legumes"} onSelect={setActif} className="row-span-2">
               <rect x="22" y="22" width="16" height="16" transform="rotate(45 30 30)" fill="var(--color-veg-800)" />
               <rect x="56" y="40" width="12" height="12" transform="rotate(45 62 46)" fill="var(--color-veg-100)" />
-              <polygon points="34,58 56,58 45,90" fill="var(--color-fat-500)" />
+              <polygon points="34,58 56,58 45,90" fill="var(--color-veg-100)" />
               <rect x="41" y="50" width="8" height="8" fill="var(--color-veg-800)" />
               <rect x="66" y="70" width="14" height="14" fill="var(--color-veg-800)" />
             </Zone>
@@ -142,11 +140,11 @@ export function PlateExplorer() {
         {/* À côté de l'assiette */}
         <div className="grid w-16 grid-rows-3 gap-3 sm:w-24 sm:gap-4">
           <Zone id="eau" index={3} selected={actif === "eau"} onSelect={setActif} className="border-2 border-ink">
-            <rect x="0" y="34" width="100" height="66" fill="var(--color-water-100)" opacity="0.55" />
+            <rect x="0" y="34" width="100" height="66" fill="var(--color-line)" />
           </Zone>
           <Zone id="laitier" index={4} selected={actif === "laitier"} onSelect={setActif} className="border-2 border-ink">
-            <rect x="22" y="44" width="56" height="44" fill="var(--color-dairy-100)" />
-            <rect x="22" y="44" width="56" height="10" fill="var(--color-dairy-800)" />
+            <rect x="22" y="44" width="56" height="44" fill="var(--color-plate)" />
+            <rect x="22" y="44" width="56" height="10" fill="var(--color-ink)" />
           </Zone>
           <Zone id="fruit" index={5} selected={actif === "fruit"} onSelect={setActif} className="border-2 border-ink">
             <rect x="28" y="44" width="44" height="44" fill="var(--color-prot-500)" />
@@ -158,11 +156,14 @@ export function PlateExplorer() {
       {/* Repère de la case choisie */}
       <div
         aria-live="polite"
-        className={`mt-4 rounded-lg border-2 border-ink ${t.bg100} px-5 py-4`}
+        className="mt-4 rounded-lg border-2 border-ink bg-faience px-5 py-4"
         key={actif}
       >
-        <p className={`flex items-baseline justify-between gap-4 font-bold ${t.text800}`}>
-          <span>{z.nom}</span>
+        <p className="flex items-baseline justify-between gap-4 font-bold">
+          <span className="flex items-center gap-2">
+            {z.theme && <span className={`h-3 w-3 ${themes[z.theme].bg500}`} aria-hidden="true" />}
+            {z.nom}
+          </span>
           <span className="figure text-lg">{z.part}</span>
         </p>
         <p className="heading mt-1 animate-fade text-xl">{z.repere}</p>

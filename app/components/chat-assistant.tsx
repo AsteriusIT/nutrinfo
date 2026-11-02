@@ -115,13 +115,13 @@ export function ChatAssistant() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed bottom-4 right-4 z-50 inline-flex min-h-12 items-center gap-3 rounded-lg border-2 border-ink bg-ink px-5 py-3 font-bold text-white shadow-[6px_6px_0_var(--color-veg-500)] transition-colors duration-150 hover:bg-veg-500 hover:text-dark md:bottom-6 md:right-6"
+        className="fixed bottom-4 right-4 z-50 inline-flex min-h-12 items-center gap-3 rounded-lg border-2 border-ink bg-ink px-5 py-3 font-bold text-white shadow-[6px_6px_0_var(--color-accent-500)] transition-colors duration-150 hover:bg-accent-500 hover:text-dark md:bottom-6 md:right-6"
       >
         <span className="grid h-4 w-4 grid-cols-2 gap-0.5" aria-hidden="true">
-          <span className="bg-veg-500" />
-          <span className="bg-carb-500" />
-          <span className="bg-prot-500" />
-          <span className="bg-water-500" />
+          <span className="bg-accent-500" />
+          <span className="bg-white" />
+          <span className="bg-white" />
+          <span className="bg-accent-500" />
         </span>
         Poser une question
       </button>
@@ -184,14 +184,14 @@ export function ChatAssistant() {
               {m.content}
             </p>
           ) : (
-            <div key={i} className="mr-4 rounded-lg rounded-bl-sm border-l-4 border-veg-500 bg-veg-100 px-3 py-2">
+            <div key={i} className="mr-4 rounded-lg rounded-bl-sm border-l-4 border-accent-500 bg-accent-100 px-3 py-2">
               {m.content ? <Answer text={m.content} onNavigate={() => setOpen(false)} /> : <Typing />}
             </div>
           ),
         )}
 
         {error && (
-          <p role="alert" className="rounded-lg border-l-4 border-prot-500 bg-prot-100 px-3 py-2 text-prot-800">
+          <p role="alert" className="rounded-lg border-l-4 border-ink bg-faience px-3 py-2 font-semibold">
             {error}
           </p>
         )}
@@ -223,7 +223,7 @@ export function ChatAssistant() {
           <button
             type="submit"
             disabled={pending || full || !draft.trim()}
-            className="bg-ink px-5 font-bold text-white transition-colors duration-150 hover:bg-veg-500 hover:text-dark disabled:bg-line disabled:text-muted"
+            className="bg-ink px-5 font-bold text-white transition-colors duration-150 hover:bg-accent-500 hover:text-dark disabled:bg-line disabled:text-muted"
           >
             Envoyer
           </button>
@@ -245,7 +245,7 @@ function Typing() {
   return (
     <span className="flex gap-1 py-1" aria-label="L'assistant écrit">
       {[0, 1, 2].map((i) => (
-        <span key={i} className="h-2 w-2 animate-pulse bg-veg-800" style={{ animationDelay: `${i * 150}ms` }} />
+        <span key={i} className="h-2 w-2 animate-pulse bg-accent-800" style={{ animationDelay: `${i * 150}ms` }} />
       ))}
     </span>
   );

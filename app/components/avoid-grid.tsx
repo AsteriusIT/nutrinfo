@@ -16,7 +16,7 @@ export function AvoidGrid() {
       </p>
       <div className="mt-2 grid grid-cols-7 gap-0.5" aria-hidden="true">
         {A_EVITER.map((a) => (
-          <span key={a.id} className={`h-2 transition-colors duration-200 ${vus.includes(a.id) ? "bg-age-500" : "bg-faience"}`} />
+          <span key={a.id} className={`h-2 transition-colors duration-200 ${vus.includes(a.id) ? "bg-accent-500" : "bg-faience"}`} />
         ))}
       </div>
 
@@ -42,19 +42,19 @@ export function AvoidGrid() {
               </div>
               {!vu && (
                 <div className="mt-4 grid animate-fade sm:grid-cols-2">
-                  <div className="border-t-2 border-ink bg-prot-100 px-5 py-3 sm:border-r-2">
-                    <p className="text-sm font-bold text-prot-800">À éviter</p>
+                  <div className="border-t-2 border-ink bg-faience px-5 py-3 sm:border-r-2">
+                    <p className="text-sm font-bold">À éviter</p>
                     <ul className="mt-1 space-y-1">
                       {a.eviter.map((e) => (
                         <li key={e} className="flex gap-2">
-                          <span className="mt-[0.55em] h-2 w-2 shrink-0 bg-prot-500" aria-hidden="true" />
+                          <span className="mt-[0.55em] h-2 w-2 shrink-0 bg-ink" aria-hidden="true" />
                           {e}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="border-t-2 border-ink bg-veg-100 px-5 py-3">
-                    <p className="text-sm font-bold text-veg-800">À la place</p>
+                  <div className="border-t-2 border-ink bg-accent-100 px-5 py-3">
+                    <p className="text-sm font-bold text-accent-800">À la place</p>
                     <p className="mt-1">{a.plutot}</p>
                   </div>
                 </div>

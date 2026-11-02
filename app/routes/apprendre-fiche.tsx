@@ -3,7 +3,6 @@ import { CarresEnergie, VraiOuFaux } from "~/components/apprendre";
 import { PixelBand } from "~/components/pixel-band";
 import { KeyPoints, SourceBadges, Tag } from "~/components/ui";
 import { bases } from "~/lib/content";
-import { themes } from "~/lib/theme";
 import type { Route } from "./+types/apprendre-fiche";
 import NotFound from "./not-found";
 
@@ -22,14 +21,13 @@ export default function FicheApprendre() {
   if (index === -1) return <NotFound />;
 
   const f = bases[index];
-  const t = themes[f.theme];
   const precedente = bases[index - 1];
   const suivante = bases[index + 1];
 
   return (
-    <article style={t.vars}>
-      <PixelBand focus={f.theme} />
-      <header className={`${t.bg100} border-b-2 border-ink`}>
+    <article>
+      <PixelBand />
+      <header className="border-b-2 border-ink bg-faience">
         <div className="mx-auto max-w-[1240px] px-4 pb-12 pt-6 md:px-6 md:pb-16">
           <nav aria-label="Fil d'Ariane">
             <ol className="flex flex-wrap gap-x-2 text-sm text-muted">
@@ -55,7 +53,7 @@ export default function FicheApprendre() {
           <h1 className="display mt-8 max-w-[18ch] text-[2.5rem] md:text-7xl">{f.question}</h1>
           <p className="mt-6 max-w-[58ch] text-lg md:text-xl">{f.reponse}</p>
           <div className="mt-8 flex flex-wrap gap-2">
-            <Tag theme={f.theme}>
+            <Tag accent>
               Fiche {index + 1} sur {bases.length}
             </Tag>
             <Tag>3 min de lecture</Tag>
@@ -65,9 +63,9 @@ export default function FicheApprendre() {
 
       <div className="mx-auto max-w-[1240px] px-4 md:px-6">
         <div className="mx-auto max-w-[72ch] space-y-12 py-12">
-          <KeyPoints items={f.a_retenir} theme={f.theme} />
+          <KeyPoints items={f.a_retenir} />
 
-          <section aria-labelledby="image-titre" className={`rounded-lg border-l-8 ${t.border500} bg-faience px-6 py-5`}>
+          <section aria-labelledby="image-titre" className="rounded-lg border-l-8 border-ink bg-faience px-6 py-5">
             <h2 id="image-titre" className="heading text-2xl">
               Pour se le représenter
             </h2>
@@ -81,7 +79,7 @@ export default function FicheApprendre() {
             <ul className="mt-5 grid gap-3 sm:grid-cols-2">
               {f.roles.map((r) => (
                 <li key={r} className="flex gap-3 rounded-lg border-2 border-line px-4 py-3">
-                  <span className={`mt-[0.45em] h-2.5 w-2.5 shrink-0 ${t.bg500}`} aria-hidden="true" />
+                  <span className="mt-[0.45em] h-2.5 w-2.5 shrink-0 bg-accent-500" aria-hidden="true" />
                   <span>{r}</span>
                 </li>
               ))}
@@ -95,7 +93,7 @@ export default function FicheApprendre() {
             <ul className="mt-5 space-y-3">
               {f.sortes.map((s) => (
                 <li key={s.nom} className="overflow-hidden rounded-lg border-2 border-ink">
-                  <h3 className={`${t.bg100} px-4 py-2.5 font-bold ${t.text800}`}>{s.nom}</h3>
+                  <h3 className="border-b border-line bg-faience px-4 py-2.5 font-bold">{s.nom}</h3>
                   <div className="px-4 py-3">
                     <p>{s.texte}</p>
                     <p className="mt-1.5 text-sm text-muted">
@@ -114,7 +112,7 @@ export default function FicheApprendre() {
             </h2>
             <ul className="mt-5 flex flex-wrap gap-2">
               {f.sources_alimentaires.map((a) => (
-                <li key={a} className={`rounded-md ${t.bg100} px-3 py-1.5 font-semibold ${t.text800}`}>
+                <li key={a} className="rounded-md border-2 border-line px-3 py-1.5 font-semibold">
                   {a}
                 </li>
               ))}
@@ -142,7 +140,7 @@ export default function FicheApprendre() {
                 </h2>
                 <p className="figure mt-2 text-5xl">{f.kcal} kcal</p>
                 <div className="mt-4">
-                  <CarresEnergie kcal={f.kcal} theme={f.theme} />
+                  <CarresEnergie kcal={f.kcal} accent />
                 </div>
                 <p className="mt-3 text-sm text-muted">
                   {f.kcal === 0 ? "N'apporte pas d'énergie." : "Un carré = 1 kcal. Les lipides, les plus énergétiques, en apportent 9."}{" "}
@@ -154,7 +152,7 @@ export default function FicheApprendre() {
             )}
           </div>
 
-          <VraiOuFaux idee={f.idee_recue} theme={f.theme} />
+          <VraiOuFaux idee={f.idee_recue} />
 
           {f.lien && (
             <p className="text-lg">
@@ -197,7 +195,6 @@ function FicheVoisine({
   sens,
   alignDroite = false,
 }: Readonly<{ fiche?: (typeof bases)[number]; href?: string; titre?: string; sens: string; alignDroite?: boolean }>) {
-  const theme = fiche ? themes[fiche.theme] : null;
   return (
     <Link
       to={fiche ? `/apprendre/${fiche.id}` : href!}
@@ -209,7 +206,6 @@ function FicheVoisine({
         {alignDroite ? " →" : ""}
       </span>
       <span className="heading mt-1 flex items-center gap-2 text-xl">
-        {theme && <span className={`h-3 w-3 ${theme.bg500}`} aria-hidden="true" />}
         {fiche ? fiche.court : titre}
       </span>
     </Link>

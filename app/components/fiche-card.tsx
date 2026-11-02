@@ -1,17 +1,14 @@
 import { useMemo, useState } from "react";
 import type { Fiche } from "~/lib/content";
-import { themes } from "~/lib/theme";
 
 /** Type 2 : carte d'information. Cinq éléments au plus, un seul chiffre clé. */
 export function FicheCard({ fiche }: Readonly<{ fiche: Fiche }>) {
-  const t = themes[fiche.theme];
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-lg border-2 border-ink bg-plate">
-      <div className={`flex items-baseline justify-between gap-3 ${t.bg100} px-5 pb-3 pt-4`}>
+      <div className="flex items-baseline justify-between gap-3 border-b-2 border-ink px-5 pb-3 pt-4">
         <h3 className="heading text-xl">{fiche.titre}</h3>
-        <span className={`tag shrink-0 ${t.text800}`}>{fiche.etiquette}</span>
+        <span className="tag shrink-0 text-accent-800">{fiche.etiquette}</span>
       </div>
-      <div className={`h-1.5 ${t.bg500}`} aria-hidden="true" />
       <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
         <p className="figure text-[2rem] leading-none">{fiche.chiffre}</p>
         {fiche.chiffre_note && <p className="mt-1.5 text-sm text-muted">{fiche.chiffre_note}</p>}
@@ -80,7 +77,7 @@ export function FicheGrid({
                 aria-pressed={vig === v.id}
                 onClick={() => setVig((x) => (x === v.id ? null : v.id))}
                 className={`rounded-md border-2 px-3 py-2 font-semibold transition-colors duration-150 ${
-                  vig === v.id ? "border-age-800 bg-age-500 text-light" : "border-line bg-plate hover:border-ink"
+                  vig === v.id ? "border-ink bg-ink text-white" : "border-line bg-plate hover:border-ink"
                 }`}
               >
                 {v.label}

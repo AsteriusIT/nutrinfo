@@ -12,12 +12,14 @@
 
 1. **Arrondis doux** : `rounded-sm` (6 px) pour les étiquettes, `rounded-md` (10 px) pour les boutons, champs et choix, `rounded-lg` (16 px) pour les cartes, encadrés et panneaux. Les éléments graphiques (bande de pixels, logo, morceaux de sucre, cases des graphiques, formes des illustrations) restent carrés : c'est l'identité du site.
 2. **La grille est visible** : bordures fines de 1 px, blocs alignés, rythme de 8 px.
-3. **La couleur informe** : chaque famille thématique a sa couleur ; le fond reste neutre et chaud.
+3. **Règle des 3 couleurs (60 / 30 / 10)** : fond blanc ou gris très clair (60 %), encre `ink` (30 %), un seul accent vert `accent-*` (10 %) pour les actions, la page active, « L'essentiel » et les chiffres clés. Les couleurs de familles (`veg`, `carb`, `prot`) sont réservées aux graphiques et illustrations, où elles portent une information : vert légumes, jaune féculents, rose protéines.
 4. **Le texte d'abord** : lisibilité > décoration. Une idée par bloc.
 5. **Le mouvement explique** : animations courtes, désactivées si `prefers-reduced-motion`.
 6. **Accessible par défaut** : WCAG 2.2 AA / RGAA 4.1.
 
 ## 2. Couleurs
+
+> **Depuis le 2 novembre 2026 (D14)**, l'interface n'utilise que trois couleurs : le fond (`plate`, `faience`), l'encre (`ink`, `muted`, `line`) et l'accent vert (`accent-100` fond, `accent-500` aplat, `accent-800` texte, définis comme alias de `veg-*` dans `app/app.css`). Les couleurs thématiques ci-dessous ne servent plus que dans les graphiques, et seulement `veg`, `carb` et `prot`, les couleurs de l'assiette. Les autres (`dairy`, `fat`, `water`, `age`, `tool`) restent définies mais ne sont plus utilisées.
 
 ### Neutres (fond chaud, texte quasi noir)
 | Token | Hex | Usage |

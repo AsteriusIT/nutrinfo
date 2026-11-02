@@ -4,7 +4,6 @@ import { PixelBand } from "~/components/pixel-band";
 import { ButtonLink } from "~/components/ui";
 import { PlateExplorer } from "~/illustrations/plate";
 import { PROFILS } from "~/data/profils";
-import { themes, type ThemeKey } from "~/lib/theme";
 
 export const meta = () => [
   { title: "nutrinfo : bien manger à chaque âge de la vie" },
@@ -16,11 +15,11 @@ export const meta = () => [
 ];
 
 // Repères PNNS 4, repris par le PNNS 5 (adultes)
-const REPERES: { titre: string; sens: string; theme: ThemeKey; items: [string, string][] }[] = [
+const REPERES: { titre: string; sens: string; signe: string; items: [string, string][] }[] = [
   {
     titre: "Augmenter",
     sens: "À manger plus souvent",
-    theme: "veg",
+    signe: "+",
     items: [
       ["Fruits et légumes", "5 par jour"],
       ["Légumes secs", "2 fois par semaine"],
@@ -31,7 +30,7 @@ const REPERES: { titre: string; sens: string; theme: ThemeKey; items: [string, s
   {
     titre: "Aller vers",
     sens: "À choisir de préférence",
-    theme: "carb",
+    signe: "→",
     items: [
       ["Féculents complets", "1 par jour au moins"],
       ["Poisson", "2 fois par semaine"],
@@ -42,7 +41,7 @@ const REPERES: { titre: string; sens: string; theme: ThemeKey; items: [string, s
   {
     titre: "Réduire",
     sens: "À limiter",
-    theme: "prot",
+    signe: "−",
     items: [
       ["Viande hors volaille", "500 g par semaine"],
       ["Charcuterie", "150 g par semaine"],
@@ -52,14 +51,14 @@ const REPERES: { titre: string; sens: string; theme: ThemeKey; items: [string, s
   },
 ];
 
-const DISPONIBLE: { titre: string; texte: string; href: string; theme: ThemeKey }[] = [
-  { titre: "Apprendre les bases", texte: "C'est quoi une protéine, un glucide, une calorie ? 8 fiches courtes.", href: "/apprendre", theme: "tool" },
-  { titre: "Composer son assiette", texte: "Remplissez une assiette et voyez si elle est équilibrée.", href: "/bases/assiette", theme: "veg" },
-  { titre: "Protéines animales ou végétales ?", texte: "Comparez, calculez votre besoin, associez céréales et légumineuses.", href: "/nutriments/proteines/animales-vs-vegetales", theme: "prot" },
-  { titre: "Glucides, sucres et fibres", texte: "Voyez où se cache le sucre et composez une journée riche en fibres.", href: "/nutriments/glucides", theme: "carb" },
-  { titre: "Bien s'hydrater", texte: "Combien boire, quoi boire, et le sucre des boissons en morceaux.", href: "/nutriments/eau", theme: "water" },
-  { titre: "Vitamines et minéraux", texte: "Rôle, besoin et sources de chacun, sur une fiche.", href: "/nutriments/vitamines-et-mineraux", theme: "dairy" },
-  { titre: "Selon mon âge", texte: "Ce qui change pour les enfants, pendant la grossesse et après 65 ans.", href: "/ages", theme: "age" },
+const DISPONIBLE: { titre: string; texte: string; href: string }[] = [
+  { titre: "Apprendre les bases", texte: "C'est quoi une protéine, un glucide, une calorie ? 8 fiches courtes.", href: "/apprendre" },
+  { titre: "Composer son assiette", texte: "Remplissez une assiette et voyez si elle est équilibrée.", href: "/bases/assiette" },
+  { titre: "Protéines animales ou végétales ?", texte: "Comparez, calculez votre besoin, associez céréales et légumineuses.", href: "/nutriments/proteines/animales-vs-vegetales" },
+  { titre: "Glucides, sucres et fibres", texte: "Voyez où se cache le sucre et composez une journée riche en fibres.", href: "/nutriments/glucides" },
+  { titre: "Bien s'hydrater", texte: "Combien boire, quoi boire, et le sucre des boissons en morceaux.", href: "/nutriments/eau" },
+  { titre: "Vitamines et minéraux", texte: "Rôle, besoin et sources de chacun, sur une fiche.", href: "/nutriments/vitamines-et-mineraux" },
+  { titre: "Selon mon âge", texte: "Ce qui change pour les enfants, pendant la grossesse et après 65 ans.", href: "/ages" },
 ];
 
 const A_VENIR = ["Quelle huile choisir ?", "Lire une étiquette", "Bébés de 0 à 3 ans"];
@@ -111,18 +110,22 @@ function Reperes() {
       </p>
       <div className="mt-10 grid gap-0 overflow-hidden rounded-lg border-2 border-ink md:grid-cols-3">
         {REPERES.map((r) => {
-          const t = themes[r.theme];
           return (
             <div key={r.titre} className="border-b-2 border-ink last:border-b-0 md:border-b-0 md:border-r-2 md:last:border-r-0">
-              <div className={`${t.bg500} ${t.on500} px-5 py-5`}>
-                <h3 className="display text-3xl">{r.titre}</h3>
-                <p className="mt-1 font-semibold opacity-90">{r.sens}</p>
+              <div className="flex items-start gap-4 border-b-2 border-ink bg-faience px-5 py-5">
+                <span className="figure grid h-10 w-10 shrink-0 place-items-center rounded-md bg-accent-500 text-2xl text-dark" aria-hidden="true">
+                  {r.signe}
+                </span>
+                <span>
+                  <h3 className="display text-3xl">{r.titre}</h3>
+                  <p className="mt-1 font-semibold text-muted">{r.sens}</p>
+                </span>
               </div>
               <dl>
                 {r.items.map(([nom, freq]) => (
                   <div key={nom} className="flex items-baseline justify-between gap-4 border-t border-line px-5 py-3 first:border-t-0">
                     <dt>{nom}</dt>
-                    <dd className={`text-right font-bold ${t.text800}`}>{freq}</dd>
+                    <dd className="text-right font-bold">{freq}</dd>
                   </div>
                 ))}
               </dl>
@@ -150,7 +153,7 @@ function ProfilSelector() {
   const p = PROFILS.find((x) => x.id === actif)!;
 
   return (
-    <section className="border-y-2 border-ink bg-age-100" aria-labelledby="profil-titre">
+    <section className="border-y-2 border-ink bg-faience" aria-labelledby="profil-titre">
       <div className="mx-auto max-w-[1240px] px-4 py-20 md:px-6">
         <h2 id="profil-titre" className="heading text-3xl md:text-5xl">
           Vos besoins changent avec l'âge
@@ -168,7 +171,7 @@ function ProfilSelector() {
               type="button"
               onClick={() => setActif(x.id)}
               className={`px-4 py-3 text-left transition-colors duration-150 ${
-                actif === x.id ? "bg-age-500 text-light" : "bg-plate hover:bg-age-100"
+                actif === x.id ? "bg-ink text-white" : "bg-plate hover:bg-accent-100"
               }`}
             >
               <span className="block font-bold">{x.label}</span>
@@ -181,7 +184,7 @@ function ProfilSelector() {
           <ul className="grid gap-5 md:grid-cols-3" key={p.id}>
             {p.points.map((pt) => (
               <li key={pt} className="flex animate-fade gap-3 text-lg font-semibold leading-snug">
-                <span className="mt-[0.45em] h-2.5 w-2.5 shrink-0 bg-age-500" aria-hidden="true" />
+                <span className="mt-[0.45em] h-2.5 w-2.5 shrink-0 bg-accent-500" aria-hidden="true" />
                 {pt}
               </li>
             ))}
@@ -207,14 +210,13 @@ function Explorer() {
       </h2>
       <ul className="mt-10 grid gap-4 sm:grid-cols-2">
         {DISPONIBLE.map((r) => {
-          const t = themes[r.theme];
           return (
             <li key={r.href}>
               <Link
                 to={r.href}
                 className="group flex h-full overflow-hidden rounded-lg border-2 border-ink transition-[box-shadow,transform] duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--color-ink)]"
               >
-                <span className={`w-5 shrink-0 ${t.bg500} transition-[width] duration-200 group-hover:w-8`} aria-hidden="true" />
+                <span className="w-5 shrink-0 bg-accent-500 transition-[width] duration-200 group-hover:w-8" aria-hidden="true" />
                 <span className="p-5">
                   <span className="heading block text-xl">{r.titre}</span>
                   <span className="mt-2 block text-muted">{r.texte}</span>

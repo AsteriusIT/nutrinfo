@@ -12,9 +12,9 @@ export function ArticleLayout({ fm, children }: Readonly<{ fm: PageFrontmatter; 
   const t = themes[fm.theme];
 
   return (
-    <article style={t.vars}>
-      <PixelBand focus={fm.theme} />
-      <header className={`${t.bg100} border-b-2 border-ink`}>
+    <article>
+      <PixelBand />
+      <header className="border-b-2 border-ink bg-faience">
         <div className="mx-auto max-w-[1240px] px-4 pb-12 pt-6 md:px-6 md:pb-16">
           <nav aria-label="Fil d'Ariane">
             <ol className="flex flex-wrap gap-x-2 text-sm text-muted">
@@ -37,7 +37,7 @@ export function ArticleLayout({ fm, children }: Readonly<{ fm: PageFrontmatter; 
           <h1 className="display mt-8 max-w-[18ch] text-[2.5rem] md:text-7xl">{fm.titre}</h1>
           <p className="mt-6 max-w-[58ch] text-lg md:text-xl">{fm.chapeau}</p>
           <div className="mt-8 flex flex-wrap gap-2">
-            <Tag theme={fm.theme}>{t.label}</Tag>
+            <Tag accent>{t.label}</Tag>
             {fm.ages?.map((a) => (
               <Tag key={a}>{a}</Tag>
             ))}
@@ -48,7 +48,7 @@ export function ArticleLayout({ fm, children }: Readonly<{ fm: PageFrontmatter; 
 
       <div className="mx-auto max-w-[1240px] px-4 md:px-6">
         <div className="mx-auto max-w-[72ch] py-12">
-          <KeyPoints items={fm.a_retenir} theme={fm.theme} />
+          <KeyPoints items={fm.a_retenir} />
           <div className="prose-carre mt-4">{children}</div>
 
           <footer className="mt-16 space-y-3 border-t-2 border-ink pt-5">

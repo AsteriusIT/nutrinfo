@@ -146,7 +146,7 @@ export function PlateBuilder() {
             }}
             onDragLeave={() => setSurvol(false)}
             onDrop={onDrop}
-            className={`relative aspect-square rounded-lg border-2 border-ink p-2.5 transition-colors duration-150 ${survol ? "bg-veg-100" : "bg-plate"}`}
+            className={`relative aspect-square rounded-lg border-2 border-ink p-2.5 transition-colors duration-150 ${survol ? "bg-accent-100" : "bg-plate"}`}
           >
             <ul className="grid h-full grid-cols-4 grid-rows-4 gap-1" aria-label="Contenu de l'assiette">
               {cases.map((c, i) => {
@@ -214,7 +214,7 @@ export function PlateBuilder() {
 
           <div
             aria-live="polite"
-            className={`mt-5 rounded-lg border-l-8 px-4 py-3 font-semibold ${v.ok ? "border-veg-500 bg-veg-100" : "border-carb-500 bg-carb-100"}`}
+            className={`mt-5 rounded-lg border-l-8 px-4 py-3 font-semibold ${v.ok ? "border-accent-500 bg-accent-100" : "border-ink bg-faience"}`}
           >
             {v.texte}
           </div>

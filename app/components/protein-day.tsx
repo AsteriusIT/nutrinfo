@@ -97,8 +97,8 @@ export function ProteinDay({ profilInitial = "adulte" }: Readonly<{ profilInitia
             />
           </div>
 
-          <div className="rounded-lg border-l-8 border-prot-500 bg-prot-100 px-4 py-3">
-            <p className="font-bold text-prot-800">Besoin estimé</p>
+          <div className="rounded-lg border-l-8 border-accent-500 bg-accent-100 px-4 py-3">
+            <p className="font-bold text-accent-800">Besoin estimé</p>
             <p className="figure mt-1 text-5xl">
               {besoin}
               <span className="ml-2 text-xl">g par jour</span>

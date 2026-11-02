@@ -18,8 +18,8 @@ export default function Ages() {
 
   return (
     <>
-      <PixelBand focus="age" />
-      <header className="border-b-2 border-ink bg-age-100">
+      <PixelBand />
+      <header className="border-b-2 border-ink bg-faience">
         <div className="mx-auto max-w-[1240px] px-4 pb-12 pt-6 md:px-6">
           <nav aria-label="Fil d'Ariane" className="text-sm text-muted">
             <Link to="/" className="hover:text-ink hover:underline">
@@ -36,20 +36,20 @@ export default function Ages() {
       </header>
 
       <div className="mx-auto max-w-[1240px] px-4 py-14 md:px-6">
-        <ol className="relative space-y-6 border-l-4 border-age-500 pl-6 md:pl-10">
+        <ol className="relative space-y-6 border-l-4 border-accent-500 pl-6 md:pl-10">
           {etapes.map((p) => (
             <li key={p.id} className="relative">
-              <span className="absolute -left-[2.25rem] top-6 h-5 w-5 border-4 border-plate bg-age-500 md:-left-[3.25rem]" aria-hidden="true" />
+              <span className="absolute -left-[2.25rem] top-6 h-5 w-5 border-4 border-plate bg-accent-500 md:-left-[3.25rem]" aria-hidden="true" />
               <article className="grid overflow-hidden rounded-lg border-2 border-ink md:grid-cols-[15rem_1fr]">
-                <div className="border-b-2 border-ink bg-age-100 p-5 md:border-b-0 md:border-r-2">
-                  <p className="figure text-age-800">{p.age}</p>
+                <div className="border-b-2 border-ink bg-faience p-5 md:border-b-0 md:border-r-2">
+                  <p className="figure text-accent-800">{p.age}</p>
                   <h2 className="display mt-1 text-3xl">{p.label}</h2>
                 </div>
                 <div className="p-5">
                   <ul className="space-y-2">
                     {p.points.map((pt) => (
                       <li key={pt} className="flex gap-3 text-lg">
-                        <span className="mt-[0.5em] h-2.5 w-2.5 shrink-0 bg-age-500" aria-hidden="true" />
+                        <span className="mt-[0.5em] h-2.5 w-2.5 shrink-0 bg-accent-500" aria-hidden="true" />
                         {pt}
                       </li>
                     ))}
@@ -57,7 +57,7 @@ export default function Ages() {
                   {p.href && p.cta ? (
                     <Link
                       to={p.href}
-                      className="mt-5 inline-flex min-h-11 items-center rounded-md bg-ink px-5 py-2.5 font-bold text-white transition-colors duration-150 hover:bg-age-500 hover:text-light"
+                      className="mt-5 inline-flex min-h-11 items-center rounded-md bg-ink px-5 py-2.5 font-bold text-white transition-colors duration-150 hover:bg-accent-500 hover:text-dark"
                     >
                       {p.cta}
                     </Link>

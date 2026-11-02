@@ -56,6 +56,13 @@
   --color-tool-500: #14a3a3;
   --color-tool-800: light-dark(#0a5555, #8adcdc);
 
+  /* Règle des 3 couleurs (D14) : fond (plate/faience), encre (ink) et UN accent, le vert.
+     L'interface n'utilise que ces trois-là. Les couleurs de familles ci-dessus sont réservées
+     aux graphiques et illustrations, où la couleur porte une information. */
+  --color-accent-100: var(--color-veg-100);
+  --color-accent-500: var(--color-veg-500);
+  --color-accent-800: var(--color-veg-800);
+
   /* Séries de graphiques validées (dataviz/validate_palette.js, mode clair) */
   --color-animal: #b4467a;
   --color-vegetal: #2e9e5b;

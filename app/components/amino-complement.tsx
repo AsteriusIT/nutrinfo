@@ -68,7 +68,7 @@ export function AminoComplement() {
           type="button"
           onClick={() => setAssocie((a) => !a)}
           aria-pressed={associe}
-          className="min-h-12 rounded-md bg-ink px-5 py-3 font-bold text-white transition-colors duration-150 hover:bg-veg-500 hover:text-dark"
+          className="min-h-12 rounded-md bg-ink px-5 py-3 font-bold text-white transition-colors duration-150 hover:bg-accent-500 hover:text-dark"
         >
           {associe ? "Séparer les deux familles" : "Associer céréales et légumineuses"}
         </button>

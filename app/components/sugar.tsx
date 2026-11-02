@@ -53,7 +53,7 @@ export function SugarJar({ libres, naturels }: Readonly<{ libres: number; nature
         })}
         {/* Repère OMS : au-dessus de la première rangée */}
         <span
-          className="pointer-events-none absolute inset-x-[-0.75rem] border-t-[3px] border-dashed border-carb-500"
+          className="pointer-events-none absolute inset-x-[-0.75rem] border-t-[3px] border-dashed border-accent-500"
           style={{ bottom: `calc((100% - ${(rangees - 1) * 6}px) / ${rangees} + 1.5px)` }}
           aria-hidden="true"
         />
@@ -78,7 +78,7 @@ function Legende() {
         Sucre du fruit entier ou du lait
       </li>
       <li className="flex items-center gap-2">
-        <span className="w-5 border-t-[3px] border-dashed border-carb-500" aria-hidden="true" />
+        <span className="w-5 border-t-[3px] border-dashed border-accent-500" aria-hidden="true" />
         {REPERE_OMS_G} g : repère OMS pour une journée
       </li>
     </ul>
@@ -228,7 +228,7 @@ export function GouterBuilder() {
             {UTILES.map((f) => {
               const ok = couvertes.includes(f);
               return (
-                <li key={f} className={`px-2 py-2 text-center text-sm font-semibold ${ok ? "bg-age-500 text-light" : "bg-plate text-muted"}`}>
+                <li key={f} className={`px-2 py-2 text-center text-sm font-semibold ${ok ? "bg-accent-500 text-dark" : "bg-plate text-muted"}`}>
                   {ok ? "✓ " : ""}
                   {FAMILLES.find((x) => x.id === f)!.label}
                 </li>

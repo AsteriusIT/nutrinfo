@@ -42,7 +42,7 @@ export default function Sources() {
             <li
               key={s.code}
               id={s.code}
-              className="grid scroll-mt-24 gap-1 border-b border-line py-4 target:bg-carb-100 md:grid-cols-[13rem_1fr_4rem] md:gap-4"
+              className="grid scroll-mt-24 gap-1 border-b border-line py-4 target:bg-accent-100 md:grid-cols-[13rem_1fr_4rem] md:gap-4"
             >
               <span className="font-bold">{s.code.replaceAll("-", " ")}</span>
               <span>

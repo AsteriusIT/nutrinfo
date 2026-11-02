@@ -15,8 +15,8 @@ export const meta = () => [
 export default function VitaminesEtMineraux() {
   return (
     <>
-      <PixelBand focus="dairy" />
-      <header className="border-b-2 border-ink bg-dairy-100">
+      <PixelBand />
+      <header className="border-b-2 border-ink bg-faience">
         <div className="mx-auto max-w-[1240px] px-4 pb-12 pt-6 md:px-6">
           <nav aria-label="Fil d'Ariane" className="text-sm text-muted">
             <Link to="/" className="hover:text-ink hover:underline">
